@@ -1,0 +1,29 @@
+.menu{
+  padding-right: 70px;
+  line-height: 29px;
+  transition: .5s, color .10s;
+      -webkit-transition: .5s, color .10s;
+      -moz-transition: .5s, color .10s;
+
+}
+.menu:hover{
+  transform: translatex(-20px);
+      -webkit-transform: translatex(-20px);
+      -moz-transform: translatex(-20px);
+}
+
+.menu__btn{
+  height: 73px;
+}
+
+.menu__button--smallSize{
+  height: 57%;
+  width: 150px;
+  border-radius: 15px;
+  border-style: none;
+  background-color: #efe6c8;
+}
+
+.menu__button--smallSize:hover{
+  background-color: #e5efc8;
+}

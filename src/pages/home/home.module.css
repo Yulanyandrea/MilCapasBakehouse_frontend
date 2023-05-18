@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;500;600&display=swap');
+
+/* body{
+  background-color: white;
+} */
+
+.ContainerHome{
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Josefin Sans', sans-serif;
+  background-color: white;
+}
+
+.ContainerHome::before{
+  content: "";
+  background-size: contain;
+  background-position: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.ContainerHome__image--img{
+  width: 240px;
+  height: 225px;
+  position: relative;
+  animation-name: amasaLogo;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes amasaLogo {
+  0%   {left:52px; top:300px;}
+  50%  {left:52px; top:100px;}
+  75%  {left:52px; top:200px;}
+  100% {left:52px; top:225px;}
+}
+
+.ContainerHome__text{
+  animation-name:amasatext;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 183px;
+}
+
+@keyframes amasatext {
+  0%   {left:0px; top:300px;}
+  50%  {left:0px; top:100px;}
+  75%  {left:0px; top:200px;}
+  100% {left:0px; top:82px;}
+}
+
+.ContainerHome__button{
+  animation-name:amasabutton;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 180px;
+}
+
+@keyframes amasabutton {
+  0%   {left:0px; top:300px;}
+  50%  {left:0px; top:100px;}
+  75%  {left:0px; top:200px;}
+  100% {left:0px; top:180px;}
+}
+.ContainerHome__button--btn{
+  border-style: none;
+  height: 44px;
+  width: 50%;
+  border-radius: 20px;
+  background-color: #48240a;
+  color: white;
+}
+
+.ContainerHome__button--btn:hover{
+  background-color: #8b4613;
+}
+
+@media screen and (min-width:1200px) {
+
+  @keyframes amasaLogo {
+    0% { left: 100px; top: 300px; }
+    50% { left: 200px; top: 190px; }
+    75% { left: 300px; top: 150px; }
+    100% { left: 370px; top: 10px; }
+  }
+
+  .ContainerHome__image--img{
+    width: 471px;
+    height: 465px;
+    position: absolute;
+    animation: amasaLogo 3s ease-in-out ;
+    animation-fill-mode: forwards;
+
+  }
+
+  .ContainerHome__text{
+    font-size: 35px;
+    position: relative;
+  }
+
+  @keyframes amasatext {
+    0%   {left:0px; top:300px;}
+    50%  {left:50px; top:100px;}
+    75%  {left:0px; top:200px;}
+    100% {left:15px; top:160px;}
+  }
+
+  .ContainerHome__button{
+    position: absolute;
+  }
+
+  .ContainerHome__button--btn{
+    height: 55px;
+    width: 234px;
+    font-size: 20px;
+  }
+
+  @keyframes amasabutton {
+    0%   {left:0px; top:300px;}
+    50%  {left:0px; top:100px;}
+    75%  {left:400px; top:200px;}
+    100% {left:500px; top:400px;}
+  }
+}

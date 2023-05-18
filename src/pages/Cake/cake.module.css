@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;500;600&display=swap');
+
+.containerCake{
+  font-family: 'Josefin Sans', sans-serif;
+  display: flex;
+  position: relative;
+  top: 59px;
+}
+
+.containerCake__side1{
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  position: relative;
+  top: -101px;
+}
+
+.containerCake__side2{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.containerCake__image{
+  width: 100%;
+}
+
+.containerCake__amount{
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.containerCake__amount--am{
+  padding: 5px;
+}
+
+.containerCake__submitBtn--sub{
+  border-style: none;
+  height: 34px;
+  width: 100%;
+  border-radius: 15px;
+}
+
+.containerCake__submitBtn--sub:hover{
+  background-color: #f5f5dc;
+}
+
+@media(min-width:1200px){
+  .containerCake{
+    justify-content: center;
+  }
+
+  .containerCake__side1{
+    width: 17%;
+  }
+}
