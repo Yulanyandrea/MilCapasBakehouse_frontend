@@ -8,7 +8,7 @@ import { increment,decrement,productsData } from '../../feature/products/product
 const Cake = () => {
   const dispatch = useDispatch();
   const data = useSelector((state) => state.products?.cake);
-  const products = useSelector((state) => state.products?.milhojas);
+  const products = useSelector((state) => state.products?.cakeMilhoja);
 
   return (
     <>
