@@ -10,9 +10,8 @@ import principal from './principalPage.module.css'
 const PrincipalPage = () => {
 
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(productsData())
-  })
+
+
   return (
     <section className={principal.PrincipalPageContainer}>
       <header className={principal.PrincipalPage}>

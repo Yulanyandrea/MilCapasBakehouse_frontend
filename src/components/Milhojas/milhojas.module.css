@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;500;600&display=swap');
+
+/* .containerCake{
+  font-family: 'Josefin Sans', sans-serif;
+  display: flex;
+  position: relative;
+  top: 59px;
+} */
+/*
+.containerCake__side1{
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  position: relative;
+  top: -101px;
+} */
+
+.containerCake__side2{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  align-items: self-end;
+}
+
+.containerCake__image{
+  display: flex;
+  width: 50%;
+  justify-content: right;
+  align-items: flex-end;
+}
+
+.containerCake___detail{
+  align-items: center;
+}
+
+.containerCake__amount{
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  position: relative;
+  right: 81px;
+}
+
+.containerCake__amount--am{
+  padding: 5px;
+}
+
+.containerCake__submitBtn{
+  width: 100%;
+}
+
+.containerCake__submitBtn--sub{
+  border-style: none;
+  height: 34px;
+  width: 100%;
+  border-radius: 15px;
+}
+
+.containerCake__submitBtn--sub:hover{
+  background-color: #f5f5dc;
+}
+
+@media(min-width:1200px){
+  .containerCake__side2{
+    padding-right: 60px;
+  }
+
+  .containerCake__image{
+    width: 30%;
+    height: 70%;
+  }
+
+  .containerCake___detail{
+    font-size: 20px;
+    position: relative;
+    right: 132px;
+
+  }
+
+  .containerCake__amount{
+    position: relative;
+    right: 200px;
+  }
+
+  .containerCake__subtraction{
+    height: 30px;
+    width: 39px;
+  }
+
+  .containerCake__add{
+    height: 30px;
+    width: 39px;
+  }
+
+  .containerCake__submitBtn{
+    width: 50%;
+    padding-top: 15px;
+  }
+
+
+}
