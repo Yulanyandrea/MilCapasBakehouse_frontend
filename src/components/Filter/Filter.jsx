@@ -1,23 +1,30 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { getFilterMilhojas } from '../../services/productServices';
 import cake from './filter.module.css';
 
-const Filter = () => {
+const Filter = ({onFilterChange}) => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products?.cakeMilhoja);
+  const tastes = getFilterMilhojas(products, 'taste');
+
+  const handelChange = ({ target }) => {
+    const { value, name } = target;
+    onFilterChange({ [name]: value });
+  };
   return (
     <>
-      <select name="taste" className={cake.containerCake} label="taste" >
+      <select name="taste" className={cake.containerCake} label="taste" onChange={handelChange} >
             <option name="null"> </option>
-            {
-              products.map((product)=>{
+            {/* {
+              tastes.map((taste)=>{
                 return (
                   <>
-                    <option name="taste" key={product._id}>{product.taste}</option>
+                    <option name="taste" key={taste}>{taste}</option>
 
                   </>
                 )
               })
-            }
+            } */}
 
           </select>
 

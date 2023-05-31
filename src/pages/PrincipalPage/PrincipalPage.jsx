@@ -11,7 +11,6 @@ const PrincipalPage = () => {
 
   const dispatch = useDispatch();
 
-
   return (
     <section className={principal.PrincipalPageContainer}>
       <header className={principal.PrincipalPage}>

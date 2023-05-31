@@ -12,8 +12,8 @@ const initialState = {
 };
 
 // get data products
-export const productsData = createAsyncThunk('products/milhojas', async () => {
-  const response = await getDataMilhojas()
+export const productsData = createAsyncThunk('products/milhojas', async (filters) => {
+  const response = await getDataMilhojas(filters)
   return response
 })
 
