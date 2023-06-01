@@ -1,13 +1,14 @@
-export const getFilterMilhojas = async (array, filter) => {
-  const finalArray = array.reduce((acc,obj)=> {
-    const variable = acc.filter((item) => item.taste).length
-    if(!variable){
-      return [... acc,obj[filter]]
+export const getFilterMilhojas = (array, filterProperty) => {
+  const tranformArray = array.reduce((acc, obj) => {
+    const exist = acc.filter((item) => item === obj.taste).length;
+    if (!exist) {
+      return [...acc, obj[filterProperty]];
     }
-    return acc
-    },[])
-    return finalArray
-}
+    return acc;
+  }, []);
+  return tranformArray;
+};
+
 
 
 

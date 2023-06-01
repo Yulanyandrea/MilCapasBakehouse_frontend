@@ -1,19 +1,25 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { getDataMilhojas } from './productApi';
+import { getDataMilhojasFilter,getDataMilhojas } from './productApi';
 
 const initialState = {
   cake:0,
   halfCakeAmount:0,
   personalCake:0,
+  dataBase:[],
   cakeMilhoja:[],
   personal: [],
   halfCake:[],
   status: 'idle',
 };
+// get all data
+export const milhojasDataBase = createAsyncThunk('milhoja/data base', async()=>{
+  const response = await getDataMilhojas()
+  return response
+})
 
-// get data products
+// get data by filters
 export const productsData = createAsyncThunk('products/milhojas', async (filters) => {
-  const response = await getDataMilhojas(filters)
+  const response = await getDataMilhojasFilter(filters)
   return response
 })
 
@@ -45,6 +51,17 @@ const productReducer = createSlice({
   },
   extraReducers:(builder) => {
     builder
+    //take all data base
+    .addCase(milhojasDataBase.pending, (state) => {
+      state.status = 'loading';
+    })
+    .addCase(milhojasDataBase.fulfilled, (state, action) => {
+      state.dataBase = action.payload;
+    })
+    .addCase(milhojasDataBase.rejected, (state) => {
+      state.status = 'reject';
+    })
+    // filter milhojas
     .addCase(productsData.pending, (state) => {
       state.status = 'loading';
     })

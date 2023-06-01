@@ -1,11 +1,18 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { milhojasDataBase } from '../../feature/products/productSlice';
 import { getFilterMilhojas } from '../../services/productServices';
 import cake from './filter.module.css';
 
 const Filter = ({onFilterChange}) => {
   const dispatch = useDispatch();
-  const products = useSelector((state) => state.products?.cakeMilhoja);
-  const tastes = getFilterMilhojas(products, 'taste');
+
+  useEffect(() => {
+    dispatch(milhojasDataBase());
+  }, []);
+
+  const productMilhoja = useSelector((state) => state.products?.dataBase);
+  const tastes = getFilterMilhojas(productMilhoja, 'taste');
 
   const handelChange = ({ target }) => {
     const { value, name } = target;
@@ -15,7 +22,7 @@ const Filter = ({onFilterChange}) => {
     <>
       <select name="taste" className={cake.containerCake} label="taste" onChange={handelChange} >
             <option name="null"> </option>
-            {/* {
+            {
               tastes.map((taste)=>{
                 return (
                   <>
@@ -24,7 +31,7 @@ const Filter = ({onFilterChange}) => {
                   </>
                 )
               })
-            } */}
+            }
 
           </select>
 
