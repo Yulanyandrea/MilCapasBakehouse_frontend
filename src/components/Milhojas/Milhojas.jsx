@@ -3,16 +3,17 @@ import { increment,decrement,productsData } from '../../feature/products/product
 import { useDispatch,useSelector } from 'react-redux';
 import cake from './milhojas.module.css';
 
-const Milhojas = () => {
+const Milhojas = ({products}) => {
   const dispatch = useDispatch()
   const data = useSelector((state) => state.products?.cake);
   return (
     <>
       <aside className={cake.containerCake__side2}>
-            <Image src="/images/bocado.png" alt="" className={cake.containerCake__image} width={100} height={100} />
+            <Image src={products.image} alt="" className={cake.containerCake__image} width={100} height={100} />
             <section className={cake.containerCake__description}>
               <title className={cake.containerCake__title}>Arandanos</title>
               <p className={cake.containerCake___detail}>Detalles del producto</p>
+              <p className={cake.containerCake__title}>{products.detail}</p>
             </section>
             <section className={cake.containerCake__amount}>
               <button type="submit" className={cake.containerCake__subtraction} onClick={() => dispatch(decrement())}>-</button>

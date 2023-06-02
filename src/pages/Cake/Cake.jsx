@@ -22,9 +22,9 @@ const Cake = () => {
     dispatch(productsData())
   },[])
 
-  // // useEffect(() => {
-  // //   dispatch(productsData(selectedFilter));
-  // // }, [selectedFilter]);
+  useEffect(() => {
+    dispatch(productsData(selectedFilter));
+  }, [selectedFilter]);
 
 
   return (
@@ -36,14 +36,14 @@ const Cake = () => {
       <aside className={container.containerCake}>
         <h2 className={container.containerCakeTitle}>Sabores</h2>
         <Filter  onFilterChange={handleFilterChange} />
-        {/* {
+        {
           allMilhojas.map((milhoja) =>{
             return (
               <Milhojas key={milhoja._id} products={milhoja}/>
 
             )
           })
-        } */}
+        }
 
       </aside>
     </section>

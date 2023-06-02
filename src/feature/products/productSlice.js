@@ -23,6 +23,14 @@ export const productsData = createAsyncThunk('products/milhojas', async (filters
   return response
 })
 
+// get data by filters half cake
+export const productsDataHalfCake = createAsyncThunk('products/half cake', async (filters) => {
+  const response = await getDataMilhojasFilter(filters)
+  return response
+})
+
+
+
 const productReducer = createSlice({
   name: 'products',
   initialState,
@@ -61,7 +69,7 @@ const productReducer = createSlice({
     .addCase(milhojasDataBase.rejected, (state) => {
       state.status = 'reject';
     })
-    // filter milhojas
+    // filter milhojas cake
     .addCase(productsData.pending, (state) => {
       state.status = 'loading';
     })
@@ -69,6 +77,17 @@ const productReducer = createSlice({
       state.cakeMilhoja = action.payload;
     })
     .addCase(productsData.rejected, (state) => {
+      state.status = 'reject';
+    })
+
+    // filter milhojas half cake
+    .addCase(productsDataHalfCake.pending, (state) => {
+      state.status = 'loading';
+    })
+    .addCase(productsDataHalfCake.fulfilled, (state, action) => {
+      state.halfCake = action.payload;
+    })
+    .addCase(productsDataHalfCake.rejected, (state) => {
       state.status = 'reject';
     })
 
