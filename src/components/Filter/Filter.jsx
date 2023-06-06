@@ -36,7 +36,7 @@ const Filter = ({onFilterChange}) => {
               })
             }
 
-          </select>
+      </select>
 
     </>
   )
