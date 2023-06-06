@@ -9,7 +9,7 @@ const Milhojas = ({products}) => {
   return (
     <>
       <aside className={cake.containerCake__side2}>
-            <Image src={products.image} alt="" className={cake.containerCake__image} width={100} height={100} />
+            <Image src={products?.image} alt="" className={cake.containerCake__image} width={100} height={100} />
             <section className={cake.containerCake__description}>
               <title className={cake.containerCake__title}>Arandanos</title>
               <p className={cake.containerCake___detail}>Detalles del producto</p>
