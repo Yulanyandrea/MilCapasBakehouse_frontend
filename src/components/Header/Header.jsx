@@ -13,8 +13,7 @@ const Header = () => {
       <section className={header.containerHeader__amasaDetails}>
         <FontAwesomeIcon icon={faCheese} />
         <FontAwesomeIcon icon={faBreadSlice} className={header["PrincipalPage__Principaltitle--icon2"]} />
-        {/* <img src="./images/cake.png" alt="" className="containerHeader__image" /> */}
-        <h1 className={header.containerHeader__title}>Amasa Milhojeria</h1>
+        <h1 className={header.containerHeader__title}>Mil capas Bakehouse</h1>
       </section>
       <section className={header.containerHeader__shoppingCart}>
         <button type="submit" className={header["containerHeader__shoppingCart--home"]} onClick={handleClick}>Inicio</button>

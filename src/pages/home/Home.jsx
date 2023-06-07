@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <section className={home.ContainerHome}>
       <div className={home.ContainerHome__image}>
-        <Image src="/images/amasaLogo.png" alt="" className={home["ContainerHome__image--img"]} width={500} height={500}/>
+        <Image src="/images/milcapas.png" alt="" className={home["ContainerHome__image--img"]} width={500} height={500}/>
       </div>
       <div className={home.ContainerHome__text}>
         <p className={home.ContainerHome__text}>Milhojas armadas al instante</p>

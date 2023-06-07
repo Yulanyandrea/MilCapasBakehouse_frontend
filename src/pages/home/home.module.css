@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;500;600&display=swap');
 
-/* body{
-  background-color: white;
-} */
 
 .ContainerHome{
   position: relative;
@@ -55,7 +52,7 @@
   0%   {left:0px; top:300px;}
   50%  {left:0px; top:100px;}
   75%  {left:0px; top:200px;}
-  100% {left:0px; top:82px;}
+  100% {left:0px; top:110px;}
 }
 
 .ContainerHome__button{
@@ -72,7 +69,7 @@
   0%   {left:0px; top:300px;}
   50%  {left:0px; top:100px;}
   75%  {left:0px; top:200px;}
-  100% {left:0px; top:180px;}
+  100% {left:0px; top:230px;}
 }
 .ContainerHome__button--btn{
   border-style: none;
