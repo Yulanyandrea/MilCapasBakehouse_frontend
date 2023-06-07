@@ -12,7 +12,7 @@ const Items = () => {
   return (
     <section className={items.dropdown}>
       <section className={items.dropdpwn__section}>
-        <h2 className={items["dropdown__section2--text"]}>Milhojas</h2>
+        <h2 className={items["dropdown__section2--text"]}>Productos</h2>
 
         {
             isOpen === true
