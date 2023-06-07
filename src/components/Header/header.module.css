@@ -41,10 +41,16 @@
 @media(min-width:1200px){
   .containerHeader{
     align-items: center;
+    justify-content: space-between;
   }
 
   .containerHeader__amasaDetails{
     align-items: center;
+  }
+
+  .containerHeader__title{
+    padding-left: 20px;
+    font-size: 23px;
   }
 
   .containerHeader__image{
