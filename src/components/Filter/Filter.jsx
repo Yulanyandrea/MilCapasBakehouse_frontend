@@ -22,23 +22,47 @@ const Filter = ({onFilterChange}) => {
     onFilterChange({ [name]: value });
   };
   return (
-    <>
-      <select name="taste" className={cake.containerCake} label="taste" onChange={handelChange} >
-            <option name="null"> </option>
-            {
-              tastes.map((taste)=>{
-                return (
-                  <>
-                    <option name="taste" key={taste}>{taste}</option>
+    <div className={cake.PrincipalcontainerCake}>
+      <section className={cake.containerCake__containSelectOne}>
+        <h3 htmlFor="tastes" className={cake.containerCake__title}>Sabores</h3>
+        <select name="taste" className={cake.containerCake} label="taste" onChange={handelChange} >
 
-                  </>
-                )
-              })
-            }
+              <option name="null"> </option>
+              {
+                tastes.map((taste)=>{
+                  return (
+                    <>
+                      <option name="taste" key={taste}>{taste}</option>
 
-      </select>
+                    </>
+                  )
+                })
+              }
 
-    </>
+        </select>
+
+      </section>
+      <section className={cake.containerCake__containSelectOne}>
+        <h3 htmlFor="tastes" className={cake.containerCake__title}>Tamaños</h3>
+        <select name="size" className={cake.containerCake} label="size" onChange={handelChange} >
+              <option name="null"> </option>
+              {
+                sizes.map((size)=>{
+                  return (
+                    <>
+                      <option name="size" key={size}>{size}</option>
+
+                    </>
+                  )
+                })
+              }
+
+        </select>
+
+      </section>
+
+
+    </div>
   )
 }
 export default Filter;

@@ -1,20 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;500;600&display=swap');
 
+.PrincipalcontainerCake{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.containerCake__containSelectOne{
+  display: flex;
+  flex-direction: column;
+
+}
+
 .containerCake{
   font-family: 'Josefin Sans', sans-serif;
   display: flex;
   position: relative;
-  top: 59px;
   width: 40%;
   padding: 5px;
+  width: 90%;
+}
+
+.containerCake__title{
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 15px;
 }
 
 @media(min-width:1200px){
   .containerCake{
     position: relative;
     left: 30px;
-    width: 30%;
+    /* width: 30%; */
     height: 35px;
+    width: 90%;
+  }
+
+  .containerCake__containSelectOne{
+    width: 50%;
   }
 }
 
