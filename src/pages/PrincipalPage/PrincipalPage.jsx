@@ -18,7 +18,7 @@ const PrincipalPage = () => {
           <FontAwesomeIcon icon={faCheese} />
           <FontAwesomeIcon icon={faBreadSlice} className={principal["PrincipalPage__Principaltitle--icon2"]} />
 
-          <h1 className={principal.PrincipalPage__title}>Bienvenido a Amasa Milhojeria</h1>
+          <h1 className={principal.PrincipalPage__title}>Bienvenido a Mil capas Bakehouse</h1>
 
         </section>
 
