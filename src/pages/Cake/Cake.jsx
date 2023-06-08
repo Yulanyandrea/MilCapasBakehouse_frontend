@@ -10,6 +10,7 @@ import Milhojas from '@/components/Milhojas/Milhojas';
 const Cake = () => {
   const [selectedFilter, setSelectedFilter] = useState({
     taste: '',
+    size:''
   });
   const allMilhojas = useSelector((state) => state.products?.cakeMilhoja)
   const dispatch = useDispatch();

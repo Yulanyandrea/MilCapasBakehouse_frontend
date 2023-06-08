@@ -29,7 +29,7 @@ export const getDataMilhojasFilter = async (filters) => {
 
   };
   const url = filters
-    ? `${BASE}/filter?taste=${filters.taste}`
+    ? `${BASE}/filter?taste=${filters.taste}&size=${filters.size}`
     : `${BASE}`;
   try {
     const response = await fetch(url, payload);
