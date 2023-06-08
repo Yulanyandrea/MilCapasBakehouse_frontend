@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCartShopping, faCheese, faBreadSlice } from '@fortawesome/free-solid-svg-icons';
+import { faCartShopping, faCheese, faBreadSlice,faUser } from '@fortawesome/free-solid-svg-icons';
 import header from './header.module.css';
 
 const Header = () => {
@@ -17,6 +17,11 @@ const Header = () => {
       </section>
       <section className={header.containerHeader__shoppingCart}>
         <button type="submit" className={header["containerHeader__shoppingCart--home"]} onClick={handleClick}>Inicio</button>
+
+        <button type="submit" className={header["containerHeader__shoppingCart--login"]} onClick={handleClick}>
+          <FontAwesomeIcon icon={faUser} />
+        </button>
+
         <button type="submit" className={header["containerHeader__shoppingCart--btn"]}>
           <FontAwesomeIcon icon={faCartShopping} className={header["containerHeader__shoppingCart--btnIcon"]} />
         </button>

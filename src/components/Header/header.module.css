@@ -33,6 +33,17 @@
   background-color: #f5f5dc;
 }
 
+.containerHeader__shoppingCart--login{
+  border-style: none;
+  border-radius: 20px;
+  height: 37px;
+  width: 40px;
+}
+
+.containerHeader__shoppingCart--login:hover{
+  background-color: beige;
+}
+
 .containerHeader__shoppingCart--btn{
   border-style: none;
   background-color: white;
