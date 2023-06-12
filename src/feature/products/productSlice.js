@@ -7,8 +7,7 @@ const initialState = {
   personalCake:0,
   dataBase:[],
   cakeMilhoja:[],
-  personal: [],
-  halfCake:[],
+  shoppingCart:[],
   status: 'idle',
 };
 // get all data
@@ -23,13 +22,6 @@ export const productsData = createAsyncThunk('products/milhojas', async (filters
   return response
 })
 
-// get data by filters half cake
-export const productsDataHalfCake = createAsyncThunk('products/half cake', async (filters) => {
-  const response = await getDataMilhojasFilter(filters)
-  return response
-})
-
-
 
 const productReducer = createSlice({
   name: 'products',
@@ -42,20 +34,7 @@ const productReducer = createSlice({
     decrement:(state,action)=>{
       state.cake-=1;
     },
-    // half cake
-    incrementHalfCake:(state,action)=>{
-      state.halfCakeAmount +=1;
-    },
-    decrementHalfCake:(state,action)=>{
-      state.halfCakeAmount-=1;
-    },
-    //personal
-    incrementPersonalCake:(state,action)=>{
-      state.personalCake +=1;
-    },
-    decrementPersonalCake:(state,action)=>{
-      state.personalCake-=1;
-    },
+
   },
   extraReducers:(builder) => {
     builder
@@ -77,17 +56,6 @@ const productReducer = createSlice({
       state.cakeMilhoja = action.payload;
     })
     .addCase(productsData.rejected, (state) => {
-      state.status = 'reject';
-    })
-
-    // filter milhojas half cake
-    .addCase(productsDataHalfCake.pending, (state) => {
-      state.status = 'loading';
-    })
-    .addCase(productsDataHalfCake.fulfilled, (state, action) => {
-      state.halfCake = action.payload;
-    })
-    .addCase(productsDataHalfCake.rejected, (state) => {
       state.status = 'reject';
     })
 
