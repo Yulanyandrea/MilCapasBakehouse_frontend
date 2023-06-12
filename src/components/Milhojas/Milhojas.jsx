@@ -12,7 +12,11 @@ const Milhojas = ({products}) => {
             <Image src={products?.image} alt="" className={cake.containerCake__image} width={100} height={100} />
             <section className={cake.containerCake__description}>
               <p className={cake.containerCake___detail}>Detalles del producto</p>
-              <p className={cake.containerCake__title}>{products.detail}</p>
+              <p className={cake.containerCake__title}>{products?.detail}</p>
+              <p className={cake.containerCake___detail}>Tamaño</p>
+              <p className={cake.containerCake__title}>{products?.size}</p>
+              <p className={cake.containerCake___detail}>Precio</p>
+              <p className={cake.containerCake__title}>{products?.price}</p>
               <section className={cake.containerCake__amount}>
               <button type="submit" className={cake.containerCake__subtraction} onClick={() => dispatch(decrement())}>-</button>
               <label htmlFor="taste" className={cake["containerCake__amount--am"]}>{data}</label>

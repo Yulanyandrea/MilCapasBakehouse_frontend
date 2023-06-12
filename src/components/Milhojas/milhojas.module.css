@@ -1,20 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;500;600&display=swap');
 
-/* .containerCake{
-  font-family: 'Josefin Sans', sans-serif;
-  display: flex;
-  position: relative;
-  top: 59px;
-} */
-/*
-.containerCake__side1{
-  display: flex;
-  flex-direction: column;
-  padding: 16px;
-  position: relative;
-  top: -101px;
-} */
-
 .containerCake__side2{
   display: flex;
   flex-direction: column;
@@ -31,6 +16,11 @@
 
 .containerCake___detail{
   align-items: center;
+  font-weight: 500;
+}
+
+.containerCake__title{
+  font-weight: 100;
 }
 
 .containerCake__amount{
