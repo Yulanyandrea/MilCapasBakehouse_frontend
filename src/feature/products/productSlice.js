@@ -33,6 +33,12 @@ const productReducer = createSlice({
       state.cake-=1;
     },
 
+    //addToCart
+    addCart:(state,action)=>{
+      const milhojaProduct = action.payload;
+      state.shoppingCart.push(milhojaProduct)
+    }
+
   },
   extraReducers:(builder) => {
     builder
@@ -62,6 +68,7 @@ const productReducer = createSlice({
 
 export const { increment,
   decrement,
+  addCart
 } = productReducer.actions;
 
 export default productReducer.reducer;
