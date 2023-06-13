@@ -26,7 +26,7 @@ const Milhojas = ({products}) => {
               <p className={cake.containerCake___detail}>Tamaño</p>
               <p className={cake.containerCake__title}>{products?.size}</p>
               <p className={cake.containerCake___detail}>Precio</p>
-              <p className={cake.containerCake__title}>{products?.price}</p>
+              <p className={cake.containerCake__title}>{"$"}{products?.price}</p>
             <section className={cake.containerCake__submitBtn}>
               <button type="submit" className={cake["containerCake__submitBtn--sub"]} onClick={handleAddCart}>Agregar</button>
             </section>
