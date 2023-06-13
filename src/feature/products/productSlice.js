@@ -3,8 +3,6 @@ import { getDataMilhojasFilter,getDataMilhojas } from './productApi';
 
 const initialState = {
   cake:0,
-  halfCakeAmount:0,
-  personalCake:0,
   dataBase:[],
   cakeMilhoja:[],
   shoppingCart:[],
@@ -64,10 +62,6 @@ const productReducer = createSlice({
 
 export const { increment,
   decrement,
-  incrementHalfCake,
-  decrementHalfCake,
-  incrementPersonalCake,
-  decrementPersonalCake
 } = productReducer.actions;
 
 export default productReducer.reducer;
