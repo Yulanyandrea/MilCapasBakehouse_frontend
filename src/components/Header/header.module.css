@@ -47,6 +47,25 @@
 .containerHeader__shoppingCart--btn{
   border-style: none;
   background-color: white;
+  border-radius: 20px;
+}
+
+.containerHeader__shoppingCart--btn:hover{
+  background-color: beige;
+}
+
+.containerHeader__shoppingCart--notification{
+  color: black;
+  position: relative;
+  right: 10px;
+  top: -12px;
+  background-color: red;
+  border-radius: 20px;
+  width: 14%;
+  display: flex;
+  justify-content: center;
+  font-size: 15px;
+  padding: 2px;
 }
 
 @media(min-width:1200px){

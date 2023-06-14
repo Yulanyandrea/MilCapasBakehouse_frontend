@@ -1,9 +1,11 @@
 import { useRouter } from 'next/router';
+import { useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping, faCheese, faBreadSlice,faUser } from '@fortawesome/free-solid-svg-icons';
 import header from './header.module.css';
 
 const Header = () => {
+  const cart = useSelector((state)=> state.products.shoppingCart);
   const router = useRouter();
   const handleClick = () => {
     router.push('/PrincipalPage/PrincipalPage');
@@ -25,6 +27,9 @@ const Header = () => {
         <button type="submit" className={header["containerHeader__shoppingCart--btn"]}>
           <FontAwesomeIcon icon={faCartShopping} className={header["containerHeader__shoppingCart--btnIcon"]} />
         </button>
+        {
+            cart.length >= 1? <p className={header["containerHeader__shoppingCart--notification"]}>{cart.length}</p> : <p className={header["containerHeader__shoppingCart--notificationEmpty"]}></p>
+        }
       </section>
     </section>
 
