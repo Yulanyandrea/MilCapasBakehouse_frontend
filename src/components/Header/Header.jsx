@@ -10,6 +10,10 @@ const Header = () => {
   const handleClick = () => {
     router.push('/PrincipalPage/PrincipalPage');
   };
+
+  const handleShoppingCart = () => {
+    router.push('/CheckOut/CheckOut')
+  }
   return (
     <section className={header.containerHeader}>
       <section className={header.containerHeader__amasaDetails}>
@@ -24,7 +28,7 @@ const Header = () => {
           <FontAwesomeIcon icon={faUser} />
         </button>
 
-        <button type="submit" className={header["containerHeader__shoppingCart--btn"]}>
+        <button type="submit" className={header["containerHeader__shoppingCart--btn"]} onClick={handleShoppingCart}>
           <FontAwesomeIcon icon={faCartShopping} className={header["containerHeader__shoppingCart--btnIcon"]} />
         </button>
         {

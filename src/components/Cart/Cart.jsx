@@ -1,22 +1,47 @@
+import { useSelector,useDispatch } from 'react-redux';
+import { increment,decrement } from '../../feature/products/productSlice';
 import cart from './cart.module.css';
 import Image from 'next/image';
 
-const Cart = ({milhoja}) => {
+const Cart = () => {
+  const dispatch = useDispatch()
+  const shoppingCartArray = useSelector((state)=>state.products.shoppingCart);
+  const data = useSelector((state)=>state.products.cake);
+
+  const totalPrice = shoppingCartArray.reduce((acc, prod) => acc + parseFloat(prod.price), 0);
   return(
     <section className={cart.principalCart}>
-        {/* <Image src={milhoja?.image} alt="" className={cart.principalCart__image} width={100} height={100}/>
-        <section className={cart.principalCart__detail}>
-          <h3 className={cart["principalCart__detail--title"]}>Producto</h3>
-          <h3 className={cart["principalCart__detail--value"]}>{milhoja.milhojaName}</h3>
-          <h3 className={cart["principalCart__detail--title"]}>Tamaño</h3>
-          <p className={cart["principalCart__detail--value"]}>{milhoja.size}</p>
-          <h3 className={cart["principalCart__detail--title"]}>Cantidad</h3>
-          <input type="number">{}</input>
-          <h3 className={cart["principalCart__detail--title"]}>Subtotal</h3>
-          <p className={cart["principalCart__detail--value"]}>{milhoja.price}</p>
-        </section>
+      {shoppingCartArray.map((product)=>{
+        return(
+          <section key={product._id} className={cart.principalCart__container}>
+            <Image src={product?.image} alt="" className={cart.principalCart__image} width={100} height={100}/>
+              <section className={cart.principalCart__detail}>
+                <h3 className={cart["principalCart__detail--title"]}>Producto</h3>
+                <h3 className={cart["principalCart__detail--value"]}>{product?.milhojaName}</h3>
+                <h3 className={cart["principalCart__detail--title"]}>Tamaño</h3>
+                <p className={cart["principalCart__detail--value"]}>{product?.size}</p>
+                <h3 className={cart["principalCart__detail--title"]}>Cantidad</h3>
+                <section className={cart.principalCart__amount}>
+                  <button type="submit" className={cart.principalCart__subtraction} onClick={() => dispatch(decrement())}>-</button>
+                  <label htmlFor="taste" className={cart["principalCart__amount--am"]}>{data}</label>
+                  <button type="submit" className={cart.principalCart__add} onClick={() => dispatch(increment())}>+</button>
+                </section>
+                <h3 className={cart["principalCart__detail--title"]}>Subtotal</h3>
+                <p className={cart["principalCart__detail--value"]}>{product?.price}</p>
+                <hr  align="right"  size="2"  noshade="noshade"/>
 
-        <button type="submit" className={cart.principalCart__button}></button> */}
+              </section>
+          </section>
+        )
+      })}
+      <section className={cart["principalCart__detail--total"]}>
+        <h1 className={cart["principalCart__detail--totalTitle"]}>Total:</h1>
+        <p className={cart["principalCart__detail--totalAmount"]}>{totalPrice.toFixed(3)}</p>
+      </section>
+
+
+
+
 
 
     </section>

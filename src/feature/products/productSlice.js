@@ -2,10 +2,11 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { getDataMilhojasFilter,getDataMilhojas } from './productApi';
 
 const initialState = {
-  cake:0,
+  cake:1,
   dataBase:[],
   cakeMilhoja:[],
   shoppingCart:[],
+  total:0,
   status: 'idle',
 };
 // get all data
@@ -38,7 +39,6 @@ const productReducer = createSlice({
       const milhojaProduct = action.payload;
       state.shoppingCart.push(milhojaProduct)
     }
-
   },
   extraReducers:(builder) => {
     builder
