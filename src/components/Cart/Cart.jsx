@@ -39,6 +39,11 @@ const Cart = () => {
         <p className={cart["principalCart__detail--totalAmount"]}>{totalPrice.toFixed(3)}</p>
       </section>
 
+      <section className={cart.principalCart__buttons}>
+        <button type="submit" className={cart["principalCart__buttons--style"]}>Pagar</button>
+        <button type="submit" className={cart["principalCart__buttons--style"]}>Seguir comprando</button>
+      </section>
+
 
 
 
