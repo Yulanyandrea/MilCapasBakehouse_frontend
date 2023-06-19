@@ -1,16 +1,11 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheese, faBreadSlice } from '@fortawesome/free-solid-svg-icons';
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { productsData } from '../../feature/products/productSlice';
+import { useDispatch } from 'react-redux';
 import Items from '../../components/Items/Items';
 
 import principal from './principalPage.module.css'
 
 const PrincipalPage = () => {
-
-  const dispatch = useDispatch();
-
   return (
     <section className={principal.PrincipalPageContainer}>
       <header className={principal.PrincipalPage}>

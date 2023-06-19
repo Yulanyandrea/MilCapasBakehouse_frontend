@@ -1,14 +1,20 @@
 import { useSelector,useDispatch } from 'react-redux';
 import { increment,decrement } from '../../feature/products/productSlice';
+import { useRouter } from 'next/router';
 import cart from './cart.module.css';
 import Image from 'next/image';
 
 const Cart = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+  const router = useRouter();
   const shoppingCartArray = useSelector((state)=>state.products.shoppingCart);
   const data = useSelector((state)=>state.products.cake);
 
   const totalPrice = shoppingCartArray.reduce((acc, prod) => acc + parseFloat(prod.price), 0);
+
+  const handleStillBuying = () => {
+    router.push('/Cake/Cake');
+  }
   return(
     <section className={cart.principalCart}>
       {shoppingCartArray.map((product)=>{
@@ -41,7 +47,7 @@ const Cart = () => {
 
       <section className={cart.principalCart__buttons}>
         <button type="submit" className={cart["principalCart__buttons--style"]}>Pagar</button>
-        <button type="submit" className={cart["principalCart__buttons--style"]}>Seguir comprando</button>
+        <button type="submit" className={cart["principalCart__buttons--style"]} onClick={handleStillBuying}>Seguir comprando</button>
       </section>
 
 

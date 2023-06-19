@@ -46,4 +46,9 @@
   height: 50px;
   border-style: none;
   border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.principalCart__buttons--style:hover{
+  background-color: beige;
 }
