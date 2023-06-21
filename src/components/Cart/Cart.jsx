@@ -12,6 +12,10 @@ const Cart = () => {
 
   const totalPrice = shoppingCartArray.reduce((acc, prod) => acc + parseFloat(prod.price), 0);
 
+  const hanldeBuy = () => {
+    router.push()
+  }
+
   const handleStillBuying = () => {
     router.push('/Cake/Cake');
   }
@@ -46,7 +50,7 @@ const Cart = () => {
       </section>
 
       <section className={cart.principalCart__buttons}>
-        <button type="submit" className={cart["principalCart__buttons--style"]}>Pagar</button>
+        <button type="submit" className={cart["principalCart__buttons--style"]} onClick={hanldeBuy}>Pagar</button>
         <button type="submit" className={cart["principalCart__buttons--style"]} onClick={handleStillBuying}>Seguir comprando</button>
       </section>
 

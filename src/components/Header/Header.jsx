@@ -11,6 +11,10 @@ const Header = () => {
     router.push('/PrincipalPage/PrincipalPage');
   };
 
+  const handleLogIn = () => {
+    router.push('LogIn/LogIn');
+  }
+
   const handleShoppingCart = () => {
     router.push('/CheckOut/CheckOut')
   }
@@ -24,7 +28,7 @@ const Header = () => {
       <section className={header.containerHeader__shoppingCart}>
         <button type="submit" className={header["containerHeader__shoppingCart--home"]} onClick={handleClick}>Inicio</button>
 
-        <button type="submit" className={header["containerHeader__shoppingCart--login"]} onClick={handleClick}>
+        <button type="submit" className={header["containerHeader__shoppingCart--login"]} onClick={handleLogIn}>
           <FontAwesomeIcon icon={faUser} />
         </button>
 
