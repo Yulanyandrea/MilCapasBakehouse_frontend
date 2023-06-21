@@ -12,7 +12,7 @@ const Header = () => {
   };
 
   const handleLogIn = () => {
-    router.push('LogIn/LogIn');
+    router.push('/LogIn/LogIn');
   }
 
   const handleShoppingCart = () => {

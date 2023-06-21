@@ -13,7 +13,7 @@ const Cart = () => {
   const totalPrice = shoppingCartArray.reduce((acc, prod) => acc + parseFloat(prod.price), 0);
 
   const hanldeBuy = () => {
-    router.push()
+    router.push('/LogIn/LogIn');
   }
 
   const handleStillBuying = () => {
