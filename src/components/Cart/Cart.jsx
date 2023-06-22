@@ -1,6 +1,8 @@
 import { useSelector,useDispatch } from 'react-redux';
 import { increment,decrement } from '../../feature/products/productSlice';
 import { useRouter } from 'next/router';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import cart from './cart.module.css';
 import Image from 'next/image';
 
@@ -26,7 +28,14 @@ const Cart = () => {
           <section key={product._id} className={cart.principalCart__container}>
             <Image src={product?.image} alt="" className={cart.principalCart__image} width={100} height={100}/>
               <section className={cart.principalCart__detail}>
-                <h3 className={cart["principalCart__detail--title"]}>Producto</h3>
+                <section className={cart.principalCart__detailGroup}>
+                  <h3 className={cart["principalCart__detail--title"]}>Producto</h3>
+                  <button type="submit" className={cart["principalCart__detail--trash"]} >
+                    <FontAwesomeIcon icon={faTrash} className={cart["principalCart__detail--trashIcon"]} />
+                  </button>
+
+                </section>
+
                 <h3 className={cart["principalCart__detail--value"]}>{product?.milhojaName}</h3>
                 <h3 className={cart["principalCart__detail--title"]}>Tamaño</h3>
                 <p className={cart["principalCart__detail--value"]}>{product?.size}</p>

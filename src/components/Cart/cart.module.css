@@ -11,6 +11,20 @@
   padding-left: 27px;
 }
 
+.principalCart__detailGroup{
+  display: flex;
+  justify-content: space-between;
+}
+
+.principalCart__detail--trash{
+  border-style: none;
+  background-color: white;
+}
+
+.principalCart__detail--trash:hover{
+  background-color: beige;
+}
+
 .principalCart__detail--value{
   font-weight: 100;
 }
