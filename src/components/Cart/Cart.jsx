@@ -1,5 +1,5 @@
 import { useSelector,useDispatch } from 'react-redux';
-import { increment,decrement } from '../../feature/products/productSlice';
+import { increment,decrement,deleteMilhojas } from '../../feature/products/productSlice';
 import { useRouter } from 'next/router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
@@ -13,6 +13,10 @@ const Cart = () => {
   const data = useSelector((state)=>state.products.cake);
 
   const totalPrice = shoppingCartArray.reduce((acc, prod) => acc + parseFloat(prod.price), 0);
+
+  const handleDeleteProduct = (product) => {
+    dispatch(deleteMilhojas(product))
+  }
 
   const hanldeBuy = () => {
     router.push('/LogIn/LogIn');
@@ -30,7 +34,7 @@ const Cart = () => {
               <section className={cart.principalCart__detail}>
                 <section className={cart.principalCart__detailGroup}>
                   <h3 className={cart["principalCart__detail--title"]}>Producto</h3>
-                  <button type="submit" className={cart["principalCart__detail--trash"]} >
+                  <button type="submit" className={cart["principalCart__detail--trash"]} onClick={()=>handleDeleteProduct(product._id)} >
                     <FontAwesomeIcon icon={faTrash} className={cart["principalCart__detail--trashIcon"]} />
                   </button>
 

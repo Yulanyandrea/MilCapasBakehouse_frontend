@@ -38,6 +38,13 @@ const productReducer = createSlice({
     addCart:(state,action)=>{
       const milhojaProduct = action.payload;
       state.shoppingCart.push(milhojaProduct)
+    },
+
+    //delete products from shopping cart
+    deleteMilhojas:(state,action)=>{
+      const milhojas = action.payload;
+      state.shoppingCart = state.shoppingCart.filter((item) => item._id !== milhojas);
+
     }
   },
   extraReducers:(builder) => {
@@ -68,7 +75,8 @@ const productReducer = createSlice({
 
 export const { increment,
   decrement,
-  addCart
+  addCart,
+  deleteMilhojas
 } = productReducer.actions;
 
 export default productReducer.reducer;
