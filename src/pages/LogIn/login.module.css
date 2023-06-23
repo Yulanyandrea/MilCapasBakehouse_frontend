@@ -1,0 +1,9 @@
+.containerLogIn__inputs{
+  display: flex;
+  flex-direction: column;
+  height: 476px;
+  position: relative;
+  background-color: beige;
+  top: 69px;
+  border-radius: 11px;
+}
