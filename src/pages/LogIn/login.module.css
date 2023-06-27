@@ -3,7 +3,36 @@
   flex-direction: column;
   height: 476px;
   position: relative;
-  background-color: beige;
+  background-color: #fbfbf0;
   top: 69px;
   border-radius: 11px;
+}
+
+.containerLogIn__inputs--config{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 119px;
+  align-items: center;
+  justify-content: center;
+}
+
+.containerLogIn__inputs--configDetail{
+  height: 51px;
+  width: 90%;
+  border-style: none;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.containerLogIn__inputs--btn{
+  height: 48px;
+  width: 79%;
+  border-style: none;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.containerLogIn__inputs--btn:hover{
+  background-color: beige;
 }
