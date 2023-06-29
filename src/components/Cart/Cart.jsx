@@ -46,8 +46,8 @@ const Cart = () => {
                 <h3 className={cart["principalCart__detail--title"]}>Cantidad</h3>
                 <section className={cart.principalCart__amount}>
                   <button type="submit" className={cart.principalCart__subtraction} onClick={() => dispatch(decrement())}>-</button>
-                  <label htmlFor="taste" className={cart["principalCart__amount--am"]}>{data}</label>
-                  <button type="submit" className={cart.principalCart__add} onClick={() => dispatch(increment())}>+</button>
+                  <label htmlFor="taste" className={cart["principalCart__amount--am"]}>{product.amount}</label>
+                  <button type="submit" className={cart.principalCart__add} onClick={() => dispatch(increment(product._id))}>+</button>
                 </section>
                 <h3 className={cart["principalCart__detail--title"]}>Subtotal</h3>
                 <p className={cart["principalCart__detail--value"]}>{product?.price}</p>

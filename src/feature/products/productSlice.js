@@ -2,7 +2,6 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { getDataMilhojasFilter,getDataMilhojas } from './productApi';
 
 const initialState = {
-  cake:1,
   dataBase:[],
   cakeMilhoja:[],
   shoppingCart:[],
@@ -28,10 +27,19 @@ const productReducer = createSlice({
   reducers:{
     //cake
     increment:(state,action)=>{
-      state.cake +=1;
+
+      const milhojaItem = action.payload;
+      const existingItem = state.shoppingCart.find((cartItem) => cartItem._id === milhojaItem);
+      if(existingItem){
+        existingItem.amount+=1;
+      }
     },
     decrement:(state,action)=>{
-      state.cake-=1;
+      const milhojaItem = action.payload;
+      const existingItem = state.shoppingCart.find((cartItem) => cartItem._id === milhojaItem);
+      if(existingItem){
+        existingItem.amount-=1;
+      }
     },
 
     //addToCart
