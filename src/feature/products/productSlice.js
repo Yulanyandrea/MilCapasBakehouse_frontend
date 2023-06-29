@@ -5,7 +5,6 @@ const initialState = {
   dataBase:[],
   cakeMilhoja:[],
   shoppingCart:[],
-  total:0,
   status: 'idle',
 };
 // get all data

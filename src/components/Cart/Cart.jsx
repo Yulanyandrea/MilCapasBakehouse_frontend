@@ -10,15 +10,14 @@ const Cart = () => {
   const dispatch = useDispatch();
   const router = useRouter();
   const shoppingCartArray = useSelector((state)=>state.products.shoppingCart);
-  const data = useSelector((state)=>state.products.cake);
 
-  const totalPrice = shoppingCartArray.reduce((acc, prod) => acc + parseFloat(prod.price), 0);
+  const totalPrice = shoppingCartArray.reduce((acc, prod) => acc + parseFloat(prod.price)*prod.amount, 0);
 
   const handleDeleteProduct = (product) => {
     dispatch(deleteMilhojas(product))
   }
 
-  const hanldeBuy = () => {
+  const handleBuy = () => {
     router.push('/LogIn/LogIn');
   }
 
@@ -45,12 +44,12 @@ const Cart = () => {
                 <p className={cart["principalCart__detail--value"]}>{product?.size}</p>
                 <h3 className={cart["principalCart__detail--title"]}>Cantidad</h3>
                 <section className={cart.principalCart__amount}>
-                  <button type="submit" className={cart.principalCart__subtraction} onClick={() => dispatch(decrement())}>-</button>
+                  <button type="submit" className={cart.principalCart__subtraction} onClick={() => dispatch(decrement(product._id))}>-</button>
                   <label htmlFor="taste" className={cart["principalCart__amount--am"]}>{product.amount}</label>
                   <button type="submit" className={cart.principalCart__add} onClick={() => dispatch(increment(product._id))}>+</button>
                 </section>
                 <h3 className={cart["principalCart__detail--title"]}>Subtotal</h3>
-                <p className={cart["principalCart__detail--value"]}>{product?.price}</p>
+                <p className={cart["principalCart__detail--value"]}>{(product?.price*product?.amount).toFixed(3)}</p>
                 <hr  align="right"  size="2"  noshade="noshade"/>
 
               </section>
@@ -63,7 +62,7 @@ const Cart = () => {
       </section>
 
       <section className={cart.principalCart__buttons}>
-        <button type="submit" className={cart["principalCart__buttons--style"]} onClick={hanldeBuy}>Pagar</button>
+        <button type="submit" className={cart["principalCart__buttons--style"]} onClick={handleBuy}>Pagar</button>
         <button type="submit" className={cart["principalCart__buttons--style"]} onClick={handleStillBuying}>Seguir comprando</button>
       </section>
 
