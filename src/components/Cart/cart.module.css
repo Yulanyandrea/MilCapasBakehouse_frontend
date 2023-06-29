@@ -66,3 +66,13 @@
 .principalCart__buttons--style:hover{
   background-color: beige;
 }
+
+@media(min-width:1200px){
+  .principalCart{
+    align-items: center;
+  }
+
+  .principalCart__buttons{
+    width: 32%;
+  }
+}
