@@ -3,7 +3,7 @@
   flex-direction: column;
   height: 476px;
   position: relative;
-  background-color: #fbfbf0;
+  background-color: #f5efdc;
   top: 69px;
   border-radius: 11px;
 }
@@ -31,8 +31,21 @@
   border-style: none;
   border-radius: 20px;
   margin-bottom: 10px;
+  background-color: #855726;
 }
 
 .containerLogIn__inputs--btn:hover{
-  background-color: beige;
+  background-color:#d29c62;
+}
+
+@media(min-width:1200px){
+  .containerLogIn__inputs{
+    top: 30px;
+    width: 50%;
+    margin: auto;
+  }
+
+  .containerLogIn__inputs--config{
+    padding: 31px;
+  }
 }

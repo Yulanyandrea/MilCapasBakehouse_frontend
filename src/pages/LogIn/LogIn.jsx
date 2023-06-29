@@ -8,7 +8,7 @@ const LogIn = () => {
         <section className={logIn.containerLogIn__inputs}>
           <section className={logIn["containerLogIn__inputs--config"]}>
             <input type="text" className={logIn["containerLogIn__inputs--configDetail"]} placeholder="Email"/>
-            <input type="text" className={logIn["containerLogIn__inputs--configDetail"]} placeholder="Password"/>
+            <input type="text" className={logIn["containerLogIn__inputs--configDetail"]} placeholder="Contraseña"/>
             <button className={logIn["containerLogIn__inputs--btn"]}>Iniciar Sesión</button>
             <button className={logIn["containerLogIn__inputs--btn"]}>Registrarse</button>
 
