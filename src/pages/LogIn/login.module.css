@@ -12,7 +12,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  top: 119px;
+  top: 78px;
   align-items: center;
   justify-content: center;
 }
@@ -31,21 +31,38 @@
   border-style: none;
   border-radius: 20px;
   margin-bottom: 10px;
-  background-color: #94612a;
+  /* background-color: #937250; */
+  background-color:#ececec;
 }
 
 .containerLogIn__inputs--btn:hover{
-  background-color:#d29c62;
+  background-color:#b69776;
+}
+
+.containerLogIn__inputs--btnGoogle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  border-style: none;
+  border-radius: 20px;
+  height: 20px;
+  width: 78%;
+}
+
+.containerLogIn__inputs--btnGoogle:hover{
+  background-color:#b69776;
 }
 
 @media(min-width:1200px){
   .containerLogIn__inputs{
-    top: 30px;
-    width: 50%;
+    top: 20px;
+    width: 33%;
     margin: auto;
   }
 
   .containerLogIn__inputs--config{
     padding: 31px;
+    top: 35px;
   }
 }

@@ -32,7 +32,7 @@
 }
 
 .containerHeader__shoppingCart--home:hover{
-  background-color: #f5f5dc;
+  background-color:#b69776;
 }
 
 .containerHeader__shoppingCart--login{
@@ -43,7 +43,7 @@
 }
 
 .containerHeader__shoppingCart--login:hover{
-  background-color: beige;
+  background-color:#b69776;
 }
 
 .containerHeader__shoppingCart--btn{
@@ -53,7 +53,7 @@
 }
 
 .containerHeader__shoppingCart--btn:hover{
-  background-color: beige;
+  background-color:#b69776;
 }
 
 .containerHeader__shoppingCart--notification{
