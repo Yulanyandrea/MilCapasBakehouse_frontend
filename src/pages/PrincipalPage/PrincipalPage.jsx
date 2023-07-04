@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheese, faBreadSlice } from '@fortawesome/free-solid-svg-icons';
-import { useDispatch } from 'react-redux';
 import Items from '../../components/Items/Items';
 
 import principal from './principalPage.module.css'

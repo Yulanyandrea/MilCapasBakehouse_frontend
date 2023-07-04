@@ -1,7 +1,12 @@
 import logIn from './login.module.css';
 import Header from '@/components/Header/Header';
+import { useRouter } from 'next/router';
 
 const LogIn = () => {
+  const router = useRouter();
+  const handleRegisterForm = () => {
+    router.push('/Register/Register');
+  }
   return (
     <section className={logIn.containerLogIn}>
         <Header />
@@ -10,7 +15,7 @@ const LogIn = () => {
             <input type="text" className={logIn["containerLogIn__inputs--configDetail"]} placeholder="Email"/>
             <input type="text" className={logIn["containerLogIn__inputs--configDetail"]} placeholder="Contraseña"/>
             <button className={logIn["containerLogIn__inputs--btn"]}>Iniciar Sesión</button>
-            <button className={logIn["containerLogIn__inputs--btn"]}>Registrarse</button>
+            <button className={logIn["containerLogIn__inputs--btn"]} onClick={handleRegisterForm}>Registrarse</button>
             <h3>o Ingresa con : </h3>
             <button className={logIn["containerLogIn__inputs--btnGoogle"]}>
               <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 48 48">
