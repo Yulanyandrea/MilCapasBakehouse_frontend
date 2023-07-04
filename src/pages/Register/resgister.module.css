@@ -1,0 +1,38 @@
+.registerContainer__form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 50px;
+  background-color: #f5efdc;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.registerContainer__form--input{
+  height: 50px;
+  width: 100%;
+  border-style: none;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.registerContainer__form--btn{
+  height: 50px;
+  width: 100%;
+  border-radius: 20px;
+  border-style: none;
+  background-color:#ececec;
+}
+
+.registerContainer__form--btn:hover{
+  background-color:#b69776;
+}
+
+@media(min-width:1200px){
+  .registerContainer__form{
+    width: 30%;
+    margin: auto;
+  }
+}
