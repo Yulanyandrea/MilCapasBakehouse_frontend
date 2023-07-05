@@ -7,6 +7,7 @@ const Register = () => {
   const router = useRouter();
   const [modal , setModal] = useState(false)
 
+
   const handleRegisterDone = () => {
     setModal(true)
   }
