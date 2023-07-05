@@ -7,11 +7,21 @@ import register from './resgister.module.css';
 
 const Register = () => {
   const router = useRouter();
-  const { forms, handleChange } = useForms({})
+  // hook to get data from inputs
+  const { form, handleChange } = useForms({})
+  // modal state
   const [modal , setModal] = useState(false)
+  // validation
+  const [dataError, setDataError] = useState('*Este campo es requerido');
 
+  const handleRegisterDone = async (e) => {
+    e.preventDefault();
 
-  const handleRegisterDone = () => {
+    try {
+      const res = await createUser({ ...form });
+    } catch (error) {
+      console.error(error);
+    }
     setModal(true)
   }
 
@@ -27,7 +37,7 @@ const Register = () => {
         <input type="text" className={register["registerContainer__form--input"]} name = "fullName" placeholder="Nombre" onChange={handleChange}/>
         <input type="text" className={register["registerContainer__form--input"]} name = "email" placeholder="Email" onChange={handleChange}/>
         <input type="text" className={register["registerContainer__form--input"]} name = "address" placeholder="Dirección" onChange={handleChange}/>
-        <input type="text" className={register["registerContainer__form--input"]} name = "password" placeholder="Contraseña"onChange={handleChange}/>
+        <input type="password" className={register["registerContainer__form--input"]} name = "password" placeholder="Contraseña"onChange={handleChange}/>
         <button className={register["registerContainer__form--btn"]} onClick={handleRegisterDone}>Registrarme</button>
 
       </section>

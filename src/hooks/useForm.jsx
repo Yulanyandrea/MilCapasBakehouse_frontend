@@ -6,7 +6,6 @@ const useForms = (value) => {
   const handleChange = ({target}) => {
     const formValue = target.name;
     setForm({... form, [formValue]: target.value})
-
   }
 
   return{

@@ -9,7 +9,7 @@ export const createUser = async (user) => {
     body: JSON.stringify(user),
   };
 
-  const res = await fetch(`${BASE}/users`, options);
+  const res = await fetch(`${BASE}/user`, options);
   const result = await res.json();
 
   return result;
