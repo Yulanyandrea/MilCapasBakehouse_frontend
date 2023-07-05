@@ -20,10 +20,10 @@ const Register = () => {
       <Header />
       <section className={register.registerContainer__form}>
         <h3>Nueva cuenta</h3>
-        <input type="text" className={register["registerContainer__form--input"]} placeholder="Nombre"/>
-        <input type="text" className={register["registerContainer__form--input"]} placeholder="Email"/>
-        <input type="text" className={register["registerContainer__form--input"]} placeholder="Dirección"/>
-        <input type="text" className={register["registerContainer__form--input"]} placeholder="Contraseña"/>
+        <input type="text" className={register["registerContainer__form--input"]} name = "fullName" placeholder="Nombre"/>
+        <input type="text" className={register["registerContainer__form--input"]} name = "email" placeholder="Email"/>
+        <input type="text" className={register["registerContainer__form--input"]} name = "address" placeholder="Dirección"/>
+        <input type="text" className={register["registerContainer__form--input"]} name = "password" placeholder="Contraseña"/>
         <button className={register["registerContainer__form--btn"]} onClick={handleRegisterDone}>Registrarme</button>
 
       </section>
