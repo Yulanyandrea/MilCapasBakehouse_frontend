@@ -1,10 +1,34 @@
 import logIn from './login.module.css';
 import Header from '@/components/Header/Header';
 import { useRouter } from 'next/router';
+import { userLogIn } from '../../feature/users/userSlice';
+import { useDispatch } from 'react-redux';
+import useForm from '../../hooks/useForm';
 
 const LogIn = () => {
+  const {form, handleChange} = useForm()
   const router = useRouter();
-  const handleRegisterForm = () => {
+  const dispatch = useDispatch();
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      if (Object.keys(form).length < 2) {
+
+      } else {
+        const response = await dispatch(userLogIn(form));
+        if (response.payload.message === 'Invalid email or password') {
+
+        } else {
+          router.push('/PrincipalPage/PrincipalPage')
+        }
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  const handleRegisterForm = (e) => {
+    e.preventDefault();
     router.push('/Register/Register');
   }
   return (
@@ -12,9 +36,9 @@ const LogIn = () => {
         <Header />
         <section className={logIn.containerLogIn__inputs}>
           <section className={logIn["containerLogIn__inputs--config"]}>
-            <input type="text" className={logIn["containerLogIn__inputs--configDetail"]} placeholder="Email"/>
-            <input type="text" className={logIn["containerLogIn__inputs--configDetail"]} placeholder="Contraseña"/>
-            <button className={logIn["containerLogIn__inputs--btn"]}>Iniciar Sesión</button>
+            <input type="text" className={logIn["containerLogIn__inputs--configDetail"]} placeholder="Email" onChange={handleChange} name='email'/>
+            <input type="password" className={logIn["containerLogIn__inputs--configDetail"]} placeholder="Contraseña" onChange={handleChange} name='password'/>
+            <button className={logIn["containerLogIn__inputs--btn"]} onClick={handleLogin}>Iniciar Sesión</button>
             <button className={logIn["containerLogIn__inputs--btn"]} onClick={handleRegisterForm}>Registrarse</button>
             <h3>o Ingresa con : </h3>
             <button className={logIn["containerLogIn__inputs--btnGoogle"]}>
