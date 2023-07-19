@@ -49,7 +49,7 @@ const Register = () => {
       <Header />
       <section className={register.registerContainer__form}>
         <h3>Nueva cuenta</h3>
-        <input type="text" className={register["registerContainer__form--input"]}  name = "fullName" placeholder="Nombre" onChange={handleChange}/>
+        <input type="text" className={register["registerContainer__form--input"]}  name = "completeName" placeholder="Nombre" onChange={handleChange}/>
         {Error && (
           <span className={register['registerContainer__form--error']}>
             {Error}
