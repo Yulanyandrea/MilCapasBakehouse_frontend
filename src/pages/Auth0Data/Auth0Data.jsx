@@ -1,7 +1,10 @@
 import auth0 from './auth0.module.css';
 import Header from '@/components/Header/Header';
+import useForm from '../../hooks/useForm';
 
 const Auth0Data = () => {
+  const {form, handleChange} = useForm()
+
   return(
     <section className={auth0.containerauth0}>
       <Header />
