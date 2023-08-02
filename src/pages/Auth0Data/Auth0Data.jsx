@@ -9,6 +9,7 @@ import useForm from '../../hooks/useForm';
 const Auth0Data = () => {
   const dispath = useDispatch();
   const {form, handleChange} = useForm()
+  const { user, error, isLoading } = useUser();
 
   const handleSave = (e) => {
     e.preventDefault()
@@ -16,12 +17,15 @@ const Auth0Data = () => {
 
   }
 
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>{error.message}</div>;
+
   return(
     <section className={auth0.containerauth0}>
       <Header />
       <section className={auth0.auth0Input}>
-        <input type="text" className={auth0["auth0Input__inputs--configDetail"]} placeholder="Email" onChange={handleChange} name='email' value={useUser?.email}/>
-        <input type="text" className={auth0["auth0Input__inputs--configDetail"]} placeholder="name" onChange={handleChange}  value={useUser?.name}/>
+        <h1 className={auth0.auth0Input__title}>Hola {user.name} 🍰🎉</h1>
+        <input type="text" className={auth0["auth0Input__inputs--configDetail"]} placeholder="Email" onChange={handleChange} name='email' value={user?.email}/>
         <input type="text" className={auth0["auth0Input__inputs--configDetail"]} placeholder="address" onChange={handleChange} name='address'/>
         <input type="text" className={auth0["auth0Input__inputs--configDetail"]} placeholder="phone" onChange={handleChange} name='phone'/>
         <button className={auth0["auth0Input__inputs--btn"]} onClick={handleSave}>Guardar</button>
