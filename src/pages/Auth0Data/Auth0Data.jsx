@@ -13,7 +13,7 @@ const Auth0Data = () => {
 
   const handleSave = (e) => {
     e.preventDefault()
-    dispath(addUser(form))
+    dispath(addUser({...form,user}))
 
   }
 
@@ -24,11 +24,16 @@ const Auth0Data = () => {
     <section className={auth0.containerauth0}>
       <Header />
       <section className={auth0.auth0Input}>
-        <h1 className={auth0.auth0Input__title}>Hola {user.name} 🍰🎉</h1>
+        <h1 className={auth0.auth0Input__title}>Hola {user.name} 🍰</h1>
         <input type="text" className={auth0["auth0Input__inputs--configDetail"]} placeholder="Email" onChange={handleChange} name='email' value={user?.email}/>
         <input type="text" className={auth0["auth0Input__inputs--configDetail"]} placeholder="address" onChange={handleChange} name='address'/>
         <input type="text" className={auth0["auth0Input__inputs--configDetail"]} placeholder="phone" onChange={handleChange} name='phone'/>
         <button className={auth0["auth0Input__inputs--btn"]} onClick={handleSave}>Guardar</button>
+
+      </section>
+
+      <section className={auth0.shoppingCartSummary}>
+
 
       </section>
 
