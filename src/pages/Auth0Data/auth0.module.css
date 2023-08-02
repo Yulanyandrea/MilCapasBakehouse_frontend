@@ -1,0 +1,39 @@
+.auth0Input{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: beige;
+  border-radius: 20px;
+  position: relative;
+  top: 56px;
+}
+
+.auth0Input__inputs--configDetail{
+  border-style: none;
+  height: 45px;
+  border-radius: 20px;
+  width: 100%;
+  margin-bottom: 9px;
+}
+
+.auth0Input__inputs--btn{
+  height: 55px;
+  border-radius: 20px;
+  width: 100%;
+  border-style: none;
+  background-color:#ececec;
+}
+
+.auth0Input__inputs--btn:hover{
+  background-color:#b69776;
+}
+
+@media(min-width:1200px){
+  .auth0Input{
+    width: 32%;
+    margin: auto;
+    height: 388px;
+  }
+}

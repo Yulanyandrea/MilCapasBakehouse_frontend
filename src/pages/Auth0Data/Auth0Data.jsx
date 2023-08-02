@@ -20,8 +20,8 @@ const Auth0Data = () => {
     <section className={auth0.containerauth0}>
       <Header />
       <section className={auth0.auth0Input}>
-        <input type="text" className={auth0["auth0Input__inputs--configDetail"]} placeholder="Email" onChange={handleChange} name='email'/>{useUser?.email}
-        <input type="text" className={auth0["auth0Input__inputs--configDetail"]} placeholder="name" onChange={handleChange} name='name'/>{useUser?.name}
+        <input type="text" className={auth0["auth0Input__inputs--configDetail"]} placeholder="Email" onChange={handleChange} name='email' value={useUser?.email}/>
+        <input type="text" className={auth0["auth0Input__inputs--configDetail"]} placeholder="name" onChange={handleChange}  value={useUser?.name}/>
         <input type="text" className={auth0["auth0Input__inputs--configDetail"]} placeholder="address" onChange={handleChange} name='address'/>
         <input type="text" className={auth0["auth0Input__inputs--configDetail"]} placeholder="phone" onChange={handleChange} name='phone'/>
         <button className={auth0["auth0Input__inputs--btn"]} onClick={handleSave}>Guardar</button>
