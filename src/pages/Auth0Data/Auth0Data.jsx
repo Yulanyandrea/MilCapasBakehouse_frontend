@@ -1,13 +1,15 @@
 import { useUser } from '@auth0/nextjs-auth0/client';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addUser } from '../../feature/users/userSlice';
 import auth0 from './auth0.module.css';
 import Header from '@/components/Header/Header';
 import useForm from '../../hooks/useForm';
+import Image from 'next/image';
 
 
 const Auth0Data = () => {
   const dispath = useDispatch();
+  const shoppingCartData = useSelector((state)=>state.products?.shoppingCart)
   const {form, handleChange} = useForm()
   const { user, error, isLoading } = useUser();
 
@@ -24,18 +26,30 @@ const Auth0Data = () => {
     <section className={auth0.containerauth0}>
       <Header />
       <section className={auth0.auth0Input}>
-        <h1 className={auth0.auth0Input__title}>Hola {user.name} 🍰</h1>
+        <h1 className={auth0.auth0Input__title}>Hola {user?.name} 🍰</h1>
         <input type="text" className={auth0["auth0Input__inputs--configDetail"]} placeholder="Email" onChange={handleChange} name='email' value={user?.email}/>
         <input type="text" className={auth0["auth0Input__inputs--configDetail"]} placeholder="address" onChange={handleChange} name='address'/>
         <input type="text" className={auth0["auth0Input__inputs--configDetail"]} placeholder="phone" onChange={handleChange} name='phone'/>
         <button className={auth0["auth0Input__inputs--btn"]} onClick={handleSave}>Guardar</button>
 
+        {
+          shoppingCartData.map((products)=> {
+            return (
+              <section className={auth0.shoppingCartSummary} key={products?._id}>
+                <p>Productos agregados en el carrito</p>
+                <Image src={products?.image} alt="" className={auth0.shoppingCartSummary__image} width={100} height={100}/>
+
+
+
+              </section>
+
+            )
+          })
+        }
+
       </section>
 
-      <section className={auth0.shoppingCartSummary}>
 
-
-      </section>
 
 
     </section>
