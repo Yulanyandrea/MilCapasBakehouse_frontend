@@ -5,7 +5,7 @@ import '@/styles/globals.css'
 
 export default function App({ Component, pageProps }) {
   return (
-    <UserProvider>
+    <UserProvider profileUrl="http://localhost:3000/Auth0Data/Auth0Data">
       <Provider store={store}>
         <Component {...pageProps} />
       </Provider>
