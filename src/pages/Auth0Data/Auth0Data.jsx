@@ -28,9 +28,14 @@ const Auth0Data = () => {
       <Header />
       <section className={auth0.auth0Input}>
         <h1 className={auth0.auth0Input__title}>Hola {user !== undefined ?  user.name : registerUser.fullName   } 🍰</h1>
-        <input type="text" className={auth0["auth0Input__inputs--configDetail"]} placeholder="Email" onChange={handleChange} name='email' value={user?.email}/>
-        <input type="text" className={auth0["auth0Input__inputs--configDetail"]} placeholder="address" onChange={handleChange} name='address'/>
-        <input type="text" className={auth0["auth0Input__inputs--configDetail"]} placeholder="phone" onChange={handleChange} name='phone'/>
+        <label htmlFor="taste" className={auth0["auth0Input__inputs--label"]}>Correo*</label>
+        <input type="text" className={auth0["auth0Input__inputs--configDetail"]} placeholder="Email" onChange={handleChange} name='email' value={user !== undefined ?  user.email : registerUser.email  }/>
+
+        <label htmlFor="taste" className={auth0["auth0Input__inputs--label"]}>Dirección*</label>
+        <input type="text" className={auth0["auth0Input__inputs--configDetail"]} placeholder="address" onChange={handleChange} name='address' value={registerUser.address  !== undefined ?  registerUser.address  : null  }/>
+
+        <label htmlFor="taste" className={auth0["auth0Input__inputs--label"]}>Celular*</label>
+        <input type="text" className={auth0["auth0Input__inputs--configDetail"]} placeholder="phone" onChange={handleChange} name='phone' value={registerUser.phone  !== undefined ?  registerUser.phone  : null  }/>
         <button className={auth0["auth0Input__inputs--btn"]} onClick={handleSave}>Guardar</button>
         <p>Productos agregados en el carrito</p>
         {
