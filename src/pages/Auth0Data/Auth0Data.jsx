@@ -39,6 +39,9 @@ const Auth0Data = () => {
               <section className={auth0.shoppingCartSummary} key={products?._id}>
 
                 <Image src={products?.image} alt="" className={auth0.shoppingCartSummary__image} width={100} height={100}/>
+                <h4>Sabor: {products.taste}</h4>
+                <h4>Tamaño: {products.size}</h4>
+                <h4>Cantidad: {products.amount}</h4>
 
 
 
