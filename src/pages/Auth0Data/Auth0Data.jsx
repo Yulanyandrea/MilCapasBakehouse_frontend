@@ -9,6 +9,7 @@ import Image from 'next/image';
 
 const Auth0Data = () => {
   const dispath = useDispatch();
+  const registerUser = useSelector((state) =>state.user?.userLogin.profile)
   const shoppingCartData = useSelector((state)=>state.products?.shoppingCart)
   const {form, handleChange} = useForm()
   const { user, error, isLoading } = useUser();
@@ -26,17 +27,17 @@ const Auth0Data = () => {
     <section className={auth0.containerauth0}>
       <Header />
       <section className={auth0.auth0Input}>
-        <h1 className={auth0.auth0Input__title}>Hola {user?.name} 🍰</h1>
+        <h1 className={auth0.auth0Input__title}>Hola {user !== undefined ?  user.name : registerUser.fullName   } 🍰</h1>
         <input type="text" className={auth0["auth0Input__inputs--configDetail"]} placeholder="Email" onChange={handleChange} name='email' value={user?.email}/>
         <input type="text" className={auth0["auth0Input__inputs--configDetail"]} placeholder="address" onChange={handleChange} name='address'/>
         <input type="text" className={auth0["auth0Input__inputs--configDetail"]} placeholder="phone" onChange={handleChange} name='phone'/>
         <button className={auth0["auth0Input__inputs--btn"]} onClick={handleSave}>Guardar</button>
-
+        <p>Productos agregados en el carrito</p>
         {
           shoppingCartData.map((products)=> {
             return (
               <section className={auth0.shoppingCartSummary} key={products?._id}>
-                <p>Productos agregados en el carrito</p>
+
                 <Image src={products?.image} alt="" className={auth0.shoppingCartSummary__image} width={100} height={100}/>
 
 
