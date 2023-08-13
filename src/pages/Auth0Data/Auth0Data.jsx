@@ -14,6 +14,9 @@ const Auth0Data = () => {
   const {form, handleChange} = useForm()
   const { user, error, isLoading } = useUser();
 
+  const totalPrice = shoppingCartData.reduce((acc, prod) => acc + parseFloat(prod.price)*prod.amount, 0);
+
+
   const handleSave = (e) => {
     e.preventDefault()
     dispath(addUser({...form,user}))
@@ -37,7 +40,7 @@ const Auth0Data = () => {
         <label htmlFor="taste" className={auth0["auth0Input__inputs--label"]}>Celular*</label>
         <input type="text" className={auth0["auth0Input__inputs--configDetail"]} placeholder="phone" onChange={handleChange} name='phone' value={registerUser.phone  !== undefined ?  registerUser.phone  : null  }/>
 
-        <h3>Productos agregados en el carrito</h3>
+        <h3>Productos agregados al carrito</h3>
         {
           shoppingCartData.map((products)=> {
             return (
@@ -57,7 +60,9 @@ const Auth0Data = () => {
             )
           })
         }
-        <button className={auth0["auth0Input__inputs--btn"]} onClick={handleSave}>Guardar</button>
+        <h2 className={auth0["shoppingCartSummary__group--text"]}>Total: {totalPrice.toFixed(3)}</h2>
+
+        <button className={auth0["auth0Input__inputs--btn"]} onClick={handleSave}>Realizar pedido</button>
       </section>
 
 
