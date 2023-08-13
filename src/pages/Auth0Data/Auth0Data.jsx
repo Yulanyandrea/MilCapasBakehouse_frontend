@@ -49,12 +49,9 @@ const Auth0Data = () => {
                   <h4 className={auth0["shoppingCartSummary__group--text"]}>Sabor: {products.taste}</h4>
                   <h4  className={auth0["shoppingCartSummary__group--text"]}>Tamaño: {products.size}</h4>
                   <h4  className={auth0["shoppingCartSummary__group--text"]}>Cantidad: {products.amount}</h4>
+                  <h4 className={auth0["shoppingCartSummary__group--text"]}>Precio: {products.price}</h4>
 
                 </section>
-
-
-
-
               </section>
 
             )
