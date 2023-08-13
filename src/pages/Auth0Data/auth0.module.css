@@ -18,6 +18,28 @@
   margin-bottom: 9px;
 }
 
+.auth0Input__inputs--label{
+  display: flex;
+  align-self: flex-start;
+  padding: 10px;
+}
+
+.shoppingCartSummary{
+  display: flex;
+  flex-direction:row;
+  padding-bottom: 10px;
+}
+
+.auth0.shoppingCartSummary__group{
+  display: flex;
+  flex-direction: column;
+}
+
+.shoppingCartSummary__group--text{
+  margin: auto;
+  padding: 10px;
+}
+
 .auth0Input__inputs--btn{
   height: 55px;
   border-radius: 20px;

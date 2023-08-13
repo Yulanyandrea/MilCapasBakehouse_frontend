@@ -36,17 +36,22 @@ const Auth0Data = () => {
 
         <label htmlFor="taste" className={auth0["auth0Input__inputs--label"]}>Celular*</label>
         <input type="text" className={auth0["auth0Input__inputs--configDetail"]} placeholder="phone" onChange={handleChange} name='phone' value={registerUser.phone  !== undefined ?  registerUser.phone  : null  }/>
-        <button className={auth0["auth0Input__inputs--btn"]} onClick={handleSave}>Guardar</button>
-        <p>Productos agregados en el carrito</p>
+
+        <h3>Productos agregados en el carrito</h3>
         {
           shoppingCartData.map((products)=> {
             return (
               <section className={auth0.shoppingCartSummary} key={products?._id}>
-
                 <Image src={products?.image} alt="" className={auth0.shoppingCartSummary__image} width={100} height={100}/>
-                <h4>Sabor: {products.taste}</h4>
-                <h4>Tamaño: {products.size}</h4>
-                <h4>Cantidad: {products.amount}</h4>
+
+                <section className={auth0.shoppingCartSummary__group} >
+
+                  <h4 className={auth0["shoppingCartSummary__group--text"]}>Sabor: {products.taste}</h4>
+                  <h4  className={auth0["shoppingCartSummary__group--text"]}>Tamaño: {products.size}</h4>
+                  <h4  className={auth0["shoppingCartSummary__group--text"]}>Cantidad: {products.amount}</h4>
+
+                </section>
+
 
 
 
@@ -55,7 +60,7 @@ const Auth0Data = () => {
             )
           })
         }
-
+        <button className={auth0["auth0Input__inputs--btn"]} onClick={handleSave}>Guardar</button>
       </section>
 
 
