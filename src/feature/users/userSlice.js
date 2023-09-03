@@ -19,6 +19,7 @@ const userReducer = createSlice({
   reducers:{
     addUser:(state,action) => {
       const userLog = action.payload;
+      console.log(userLog)
       state.userLogin.push(userLog)
     }
   },

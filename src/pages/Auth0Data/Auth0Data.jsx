@@ -15,11 +15,22 @@ const Auth0Data = () => {
   const { user, error, isLoading } = useUser();
 
   const totalPrice = shoppingCartData.reduce((acc, prod) => acc + parseFloat(prod.price)*prod.amount, 0);
+  const accountSid = 'AC058a8baf0f69ec343991f1a78ad21ddd';
+  const authToken = 'b760a4e1af9ec5fd6c5e5e05c2564aaa';
+  //const client = require('twilio')(accountSid, authToken);
+
 
 
   const handleSave = (e) => {
     e.preventDefault()
     dispath(addUser({...form,user}))
+  //   .create({
+  //     body: 'Your Yummy Cupcakes Company order of 1 dozen frosted cupcakes has shipped and should be delivered on July 10, 2019. Details: http://www.yummycupcakes.com/',
+  //     from: `whatsapp:+57${register}`,
+  //     to: 'whatsapp:+573122432394'
+  // })
+  // .then(message => console.log(message.sid))
+  // .done();
 
   }
 
