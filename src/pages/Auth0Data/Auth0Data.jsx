@@ -15,6 +15,7 @@ const Auth0Data = () => {
   const {form, handleChange} = useForm()
   const { user, error, isLoading } = useUser();
   const [modal, setModal] = useState(false);
+  const [dataError, setDataError] = useState('');
 
   const totalPrice = shoppingCartData.reduce((acc, prod) => acc + parseFloat(prod.price)*prod.amount, 0);
 
@@ -22,9 +23,13 @@ const Auth0Data = () => {
   const handleSave = (e) => {
     e.preventDefault()
     dispath(addUser({...form,user}))
-    if(!form.address || !form.phone){
+    if(!form.address  ){
       setModal(true)
+      setDataError('*Este campo es obligatorio')
     return;
+    }else if (!form.phone){
+      setModal(true)
+      setDataError('*Este campo es obligatorio')
     }
 
 
@@ -47,9 +52,11 @@ const Auth0Data = () => {
 
         <label htmlFor="taste" className={auth0["auth0Input__inputs--label"]}>Dirección*</label>
         <input type="text" className={auth0["auth0Input__inputs--configDetail"]} placeholder="address" onChange={handleChange} name='address' value={registerUser?.address  !== undefined ?  registerUser?.address  : null  }/>
+        {dataError ? <span  className={auth0["auth0Input__inputs--validation"]}>{dataError}</span> : null}
 
         <label htmlFor="taste" className={auth0["auth0Input__inputs--label"]}>Celular*</label>
         <input type="text" className={auth0["auth0Input__inputs--configDetail"]} placeholder="phone" onChange={handleChange} name='phone' value={registerUser?.phone  !== undefined ?  registerUser?.phone  : null  }/>
+        {dataError ? <span className={auth0["auth0Input__inputs--validation"]} >{dataError}</span> : null}
 
         <h3>Productos agregados al carrito</h3>
         {

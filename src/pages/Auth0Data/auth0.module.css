@@ -18,6 +18,15 @@
   margin-bottom: 9px;
 }
 
+.auth0Input__inputs--validation{
+  color: red;
+  display: flex;
+  flex-direction: row;
+  align-self: flex-start;
+  padding-bottom: 10px;
+  font-size: 13px;
+}
+
 .auth0Input__inputs--label{
   display: flex;
   align-self: flex-start;
