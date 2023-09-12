@@ -1,5 +1,6 @@
 import { useUser } from '@auth0/nextjs-auth0/client';
 import { useDispatch, useSelector } from 'react-redux';
+import { useState } from 'react';
 import { addUser } from '../../feature/users/userSlice';
 import auth0 from './auth0.module.css';
 import Header from '@/components/Header/Header';
@@ -13,25 +14,24 @@ const Auth0Data = () => {
   const shoppingCartData = useSelector((state)=>state.products?.shoppingCart)
   const {form, handleChange} = useForm()
   const { user, error, isLoading } = useUser();
+  const [modal, setModal] = useState(false);
 
   const totalPrice = shoppingCartData.reduce((acc, prod) => acc + parseFloat(prod.price)*prod.amount, 0);
-  const accountSid = 'AC058a8baf0f69ec343991f1a78ad21ddd';
-  const authToken = 'b760a4e1af9ec5fd6c5e5e05c2564aaa';
-  //const client = require('twilio')(accountSid, authToken);
-
 
 
   const handleSave = (e) => {
     e.preventDefault()
     dispath(addUser({...form,user}))
-  //   .create({
-  //     body: 'Your Yummy Cupcakes Company order of 1 dozen frosted cupcakes has shipped and should be delivered on July 10, 2019. Details: http://www.yummycupcakes.com/',
-  //     from: `whatsapp:+57${register}`,
-  //     to: 'whatsapp:+573122432394'
-  // })
-  // .then(message => console.log(message.sid))
-  // .done();
+    if(!form.address || !form.phone){
+      setModal(true)
+    return;
+    }
 
+
+  }
+
+  const closeModal = () => {
+    setModal(false)
   }
 
   if (isLoading) return <div>Loading...</div>;
@@ -46,10 +46,10 @@ const Auth0Data = () => {
         <input type="text" className={auth0["auth0Input__inputs--configDetail"]} placeholder="Email" onChange={handleChange} name='email' value={user !== undefined ?  user.email : registerUser.email  }/>
 
         <label htmlFor="taste" className={auth0["auth0Input__inputs--label"]}>Dirección*</label>
-        <input type="text" className={auth0["auth0Input__inputs--configDetail"]} placeholder="address" onChange={handleChange} name='address' value={registerUser.address  !== undefined ?  registerUser.address  : null  }/>
+        <input type="text" className={auth0["auth0Input__inputs--configDetail"]} placeholder="address" onChange={handleChange} name='address' value={registerUser?.address  !== undefined ?  registerUser?.address  : null  }/>
 
         <label htmlFor="taste" className={auth0["auth0Input__inputs--label"]}>Celular*</label>
-        <input type="text" className={auth0["auth0Input__inputs--configDetail"]} placeholder="phone" onChange={handleChange} name='phone' value={registerUser.phone  !== undefined ?  registerUser.phone  : null  }/>
+        <input type="text" className={auth0["auth0Input__inputs--configDetail"]} placeholder="phone" onChange={handleChange} name='phone' value={registerUser?.phone  !== undefined ?  registerUser?.phone  : null  }/>
 
         <h3>Productos agregados al carrito</h3>
         {
@@ -75,6 +75,17 @@ const Auth0Data = () => {
 
         <button className={auth0["auth0Input__inputs--btn"]} onClick={handleSave}>Realizar pedido</button>
       </section>
+
+      { modal && (
+        <div className={auth0.modal}>
+          <div className={auth0.modal__content}>
+            <p>Este campo es obligatorio</p>
+            <button onClick={closeModal}>Cerrar</button>
+          </div>
+        </div>
+      )
+
+      }
 
 
 
