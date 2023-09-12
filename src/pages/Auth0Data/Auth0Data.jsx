@@ -23,13 +23,10 @@ const Auth0Data = () => {
   const handleSave = (e) => {
     e.preventDefault()
     dispath(addUser({...form,user}))
-    if(!form.address  ){
+    if(!form.address || !form.phone ){
       setModal(true)
       setDataError('*Este campo es obligatorio')
     return;
-    }else if (!form.phone){
-      setModal(true)
-      setDataError('*Este campo es obligatorio')
     }
 
 
@@ -52,11 +49,11 @@ const Auth0Data = () => {
 
         <label htmlFor="taste" className={auth0["auth0Input__inputs--label"]}>Dirección*</label>
         <input type="text" className={auth0["auth0Input__inputs--configDetail"]} placeholder="address" onChange={handleChange} name='address' value={registerUser?.address  !== undefined ?  registerUser?.address  : null  }/>
-        {dataError ? <span  className={auth0["auth0Input__inputs--validation"]}>{dataError}</span> : null}
+        {form.address ? <span  className={auth0["auth0Input__inputs--validation"]}>{dataError}</span> : <span  className={auth0["auth0Input__inputs--validation"]}>*Este campo es obligatorio</span>}
 
         <label htmlFor="taste" className={auth0["auth0Input__inputs--label"]}>Celular*</label>
-        <input type="text" className={auth0["auth0Input__inputs--configDetail"]} placeholder="phone" onChange={handleChange} name='phone' value={registerUser?.phone  !== undefined ?  registerUser?.phone  : null  }/>
-        {dataError ? <span className={auth0["auth0Input__inputs--validation"]} >{dataError}</span> : null}
+        <input type="number" className={auth0["auth0Input__inputs--configDetail"]} placeholder="phone" onChange={handleChange} name='phone' value={registerUser?.phone  !== undefined ?  registerUser?.phone  : null  }/>
+        {form.address ? <span  className={auth0["auth0Input__inputs--validation"]}>{dataError}</span> : <span  className={auth0["auth0Input__inputs--validation"]}>*Este campo es obligatorio</span>}
 
         <h3>Productos agregados al carrito</h3>
         {
@@ -86,7 +83,7 @@ const Auth0Data = () => {
       { modal && (
         <div className={auth0.modal}>
           <div className={auth0.modal__content}>
-            <p>Este campo es obligatorio</p>
+            <p>Todos campo es obligatorio</p>
             <button onClick={closeModal}>Cerrar</button>
           </div>
         </div>
