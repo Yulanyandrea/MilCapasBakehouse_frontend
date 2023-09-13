@@ -56,7 +56,7 @@ const Register = () => {
           </span>
         )}
 
-        <input type="text" className={register["registerContainer__form--input"]}  name = "email" placeholder="Email" onChange={handleChange}/>
+        <input type="email" className={register["registerContainer__form--input"]}  name = "email" placeholder="Email" onChange={handleChange}/>
         {Error && (
           <span className={register['registerContainer__form--error']}>
             {Error}
@@ -68,6 +68,13 @@ const Register = () => {
           <span className={register['registerContainer__form--error']}>
             {Error}
           </span>
+        )}
+
+        <input type="number" className={register["registerContainer__form--input"]}  name = "phone" placeholder="Celular" onChange={handleChange}/>
+        {Error && (
+            <span className={register['registerContainer__form--error']}>
+              {Error}
+            </span>
         )}
 
         <input type="password" className={register["registerContainer__form--input"]}  name = "password" placeholder="Contraseña"onChange={handleChange}/>
