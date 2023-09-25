@@ -21,7 +21,7 @@ const LogIn = () => {
         if (response.payload.message === 'Invalid email or password') {
 
         } else {
-          router.push('/PrincipalPage/PrincipalPage')
+          router.push('/Auth0Data/Auth0Data')
         }
       }
     } catch (error) {

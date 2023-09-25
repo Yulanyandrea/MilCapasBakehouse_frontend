@@ -7,12 +7,20 @@ import header from './header.module.css';
 const Header = () => {
   const cart = useSelector((state)=> state.products.shoppingCart);
   const router = useRouter();
+  const userLogged = useSelector((state)=> state.user.userLogin?.profile);
+
+
   const handleClick = () => {
     router.push('/PrincipalPage/PrincipalPage');
   };
 
   const handleLogIn = () => {
-    router.push('/LogIn/LogIn');
+    if(!userLogged){
+      router.push('/LogIn/LogIn');
+    }else{
+      router.push('/Auth0Data/Auth0Data')
+    }
+
   }
 
   const handleShoppingCart = () => {
@@ -29,7 +37,8 @@ const Header = () => {
         <button type="submit" className={header["containerHeader__shoppingCart--home"]} onClick={handleClick}>Inicio</button>
 
         <button type="submit" className={header["containerHeader__shoppingCart--login"]} onClick={handleLogIn}>
-          <FontAwesomeIcon icon={faUser} />
+           <FontAwesomeIcon icon={faUser} />
+
         </button>
 
         <button type="submit" className={header["containerHeader__shoppingCart--btn"]} onClick={handleShoppingCart}>
