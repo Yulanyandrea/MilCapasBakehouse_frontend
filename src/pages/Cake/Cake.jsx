@@ -5,9 +5,11 @@ import Header from '../../components/Header/Header';
 import container from './cake.module.css';
 import Filter from '@/components/Filter/Filter';
 import Milhojas from '@/components/Milhojas/Milhojas';
+import Load from '@/components/Load/Load';
 
 
 const Cake = () => {
+  const [isLoading, setIsLoading] = useState(true);
   const [selectedFilter, setSelectedFilter] = useState({
     taste: '',
     size:''
@@ -20,6 +22,9 @@ const Cake = () => {
   };
 
   useEffect(()=> {
+    setTimeout(() => {
+      setIsLoading(false); 
+    }, 1000); 
     dispatch(productsData())
   },[])
 
@@ -30,6 +35,7 @@ const Cake = () => {
 
   return (
     <section className={container.principalContainer}>
+      { isLoading ? (<Load/>) : <>
       <header>
         <Header />
       </header>
@@ -47,6 +53,10 @@ const Cake = () => {
         }
 
       </aside>
+      
+      
+      </>}
+      
     </section>
 
   );
