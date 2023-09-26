@@ -1,11 +1,13 @@
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import { useRouter } from 'next/router';
 import useForms from '@/hooks/useForm';
 import { createUser } from '../../feature/users/userApi';
 import Header from '@/components/Header/Header';
 import register from './resgister.module.css';
+import Load from '@/components/Load/Load';
 
 const Register = () => {
+  const [isLoading, setIsLoading] = useState(true);
   const router = useRouter();
   // hook to get data from inputs
   const { form, handleChange } = useForms({})
@@ -14,6 +16,12 @@ const Register = () => {
   // validation
   const [Error, setError] = useState('');
 
+  useEffect(() => {
+    
+    setTimeout(() => {
+      setIsLoading(false); 
+    }, 1000); 
+  }, []);
 
   const handleRegisterDone = async (e) => {
     e.preventDefault();
@@ -44,9 +52,12 @@ const Register = () => {
     setModal(false)
     router.push('/PrincipalPage/PrincipalPage');
   }
-  return (
+  return ( 
     <section className={register.registerContainer}>
-      <Header />
+      {
+        isLoading ? ( <Load/>) : (
+        <>
+          <Header />
       <section className={register.registerContainer__form}>
         <h3>Nueva cuenta</h3>
         <input type="text" className={register["registerContainer__form--input"]}  name = "completeName" placeholder="Nombre" onChange={handleChange}/>
@@ -97,6 +108,11 @@ const Register = () => {
           </div>
         )
       }
+        
+        
+        </>)
+      }
+      
 
     </section>
 
