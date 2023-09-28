@@ -11,7 +11,6 @@ import Load from '@/components/Load/Load';
 const Cake = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [selectedFilter, setSelectedFilter] = useState({
-    taste: '',
     size:''
   });
   const allMilhojas = useSelector((state) => state.products?.cakeMilhoja)
