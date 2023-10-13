@@ -12,6 +12,9 @@ const Filter = ({onFilterChange}) => {
   }, []);
 
   const productMilhoja = useSelector((state) => state.products?.dataBase);
+  // taste 
+  const tastes = getFilterMilhojas(productMilhoja,'taste')
+
   
   //size
   const sizes = getFilterMilhojas(productMilhoja, 'size');
