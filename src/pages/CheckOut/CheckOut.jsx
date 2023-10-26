@@ -8,20 +8,20 @@ const CheckOut = () => {
 
   useEffect(() =>{
     setTimeout(() => {
-      setIsLoading(false); 
-    }, 1000); 
+      setIsLoading(false);
+    }, 1000);
   },[] )
   return (
     <>
     {
-      isLoading ? (<Load/>) : <> 
+      isLoading ? (<Load/>) : <>
         <Header />
         <Cart />
-      
-      
+
+
       </>
     }
-      
+
     </>
   )
 }

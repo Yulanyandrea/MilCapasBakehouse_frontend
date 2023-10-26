@@ -1,11 +1,15 @@
 import { useUser } from '@auth0/nextjs-auth0/client';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
-import { addUser } from '../../feature/users/userSlice';
+import {Elements} from '@stripe/react-stripe-js';
+import {loadStripe} from '@stripe/stripe-js';
 import auth0 from './auth0.module.css';
 import Header from '@/components/Header/Header';
 import useForm from '../../hooks/useForm';
 import Image from 'next/image';
+import Payment from '@/components/Payment/Payment';
+
+const stripePromise = loadStripe(process.env.STRIPE_SECRET_KEY);
 
 
 const Auth0Data = () => {
@@ -18,19 +22,6 @@ const Auth0Data = () => {
   const [dataError, setDataError] = useState('');
 
   const totalPrice = shoppingCartData.reduce((acc, prod) => acc + parseFloat(prod.price)*prod.amount, 0);
-
-
-  const handleSave = (e) => {
-    e.preventDefault()
-    dispath(addUser({...form,user}))
-    if(!form.address || !form.phone ){
-      setModal(true)
-      setDataError('*Este campo es obligatorio')
-    return;
-    }
-
-
-  }
 
   const closeModal = () => {
     setModal(false)
@@ -76,8 +67,10 @@ const Auth0Data = () => {
           })
         }
         <h2 className={auth0["shoppingCartSummary__group--text"]}>Total: {totalPrice.toFixed(3)}</h2>
+        <Elements stripe={stripePromise}>
+          <Payment form={form} user={user}/>
+        </Elements>
 
-        <button className={auth0["auth0Input__inputs--btn"]} onClick={handleSave}>Realizar pedido</button>
       </section>
 
       { modal && (

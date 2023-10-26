@@ -1,0 +1,18 @@
+.stripeCss{
+  display: flex;
+  flex-direction: column;
+  width: 232%;
+}
+
+
+.auth0Input__inputs--btn{
+  height: 55px;
+  border-radius: 20px;
+  width: 100%;
+  border-style: none;
+  background-color:#ececec;
+}
+
+.auth0Input__inputs--btn:hover{
+  background-color:#b69776;
+}
