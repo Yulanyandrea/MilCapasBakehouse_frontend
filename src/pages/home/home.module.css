@@ -131,3 +131,26 @@
     100% {left:500px; top:550px;}
   }
 }
+@media(max-width:2000px){
+  @keyframes amasaLogo {
+    0% { left: 100px; top: 300px; }
+    50% { left: 200px; top: 190px; }
+    75% { left: 300px; top: 150px; }
+    100% { left: 504px; top: 10px; }
+  }
+
+  @keyframes amasatext {
+    0%   {left:0px; top:300px;}
+    50%  {left:50px; top:100px;}
+    75%  {left:0px; top:200px;}
+    100% {left:15px; top:230px;}
+  }
+
+  @keyframes amasabutton {
+    0%   {left:0px; top:300px;}
+    50%  {left:0px; top:100px;}
+    75%  {left:400px; top:200px;}
+    100% {left:616px; top:550px;}
+  }
+
+}
