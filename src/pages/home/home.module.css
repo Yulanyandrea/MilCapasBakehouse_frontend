@@ -1,16 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;500;600&display=swap");
 
-
-.ContainerHome{
+.ContainerHome {
   position: relative;
   z-index: 1;
   display: flex;
   flex-direction: column;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   background-color: white;
 }
 
-.ContainerHome::before{
+.ContainerHome::before {
   content: "";
   background-size: contain;
   background-position: center;
@@ -22,7 +21,7 @@
   z-index: -1;
 }
 
-.ContainerHome__image--img{
+.ContainerHome__image--img {
   width: 240px;
   height: 225px;
   position: relative;
@@ -32,14 +31,26 @@
 }
 
 @keyframes amasaLogo {
-  0%   {left:52px; top:300px;}
-  50%  {left:52px; top:100px;}
-  75%  {left:52px; top:200px;}
-  100% {left:52px; top:225px;}
+  0% {
+    left: 52px;
+    top: 300px;
+  }
+  50% {
+    left: 52px;
+    top: 100px;
+  }
+  75% {
+    left: 52px;
+    top: 200px;
+  }
+  100% {
+    left: 52px;
+    top: 225px;
+  }
 }
 
-.ContainerHome__text{
-  animation-name:amasatext;
+.ContainerHome__text {
+  animation-name: amasatext;
   animation-duration: 5s;
   animation-fill-mode: forwards;
   display: flex;
@@ -49,14 +60,26 @@
 }
 
 @keyframes amasatext {
-  0%   {left:0px; top:300px;}
-  50%  {left:0px; top:100px;}
-  75%  {left:0px; top:200px;}
-  100% {left:0px; top:110px;}
+  0% {
+    left: 0px;
+    top: 300px;
+  }
+  50% {
+    left: 0px;
+    top: 100px;
+  }
+  75% {
+    left: 0px;
+    top: 200px;
+  }
+  100% {
+    left: 0px;
+    top: 110px;
+  }
 }
 
-.ContainerHome__button{
-  animation-name:amasabutton;
+.ContainerHome__button {
+  animation-name: amasabutton;
   animation-duration: 5s;
   animation-fill-mode: forwards;
   display: flex;
@@ -66,12 +89,24 @@
 }
 
 @keyframes amasabutton {
-  0%   {left:0px; top:300px;}
-  50%  {left:0px; top:100px;}
-  75%  {left:0px; top:200px;}
-  100% {left:0px; top:230px;}
+  0% {
+    left: 0px;
+    top: 300px;
+  }
+  50% {
+    left: 0px;
+    top: 100px;
+  }
+  75% {
+    left: 0px;
+    top: 200px;
+  }
+  100% {
+    left: 0px;
+    top: 230px;
+  }
 }
-.ContainerHome__button--btn{
+.ContainerHome__button--btn {
   border-style: none;
   height: 44px;
   width: 50%;
@@ -80,77 +115,146 @@
   color: white;
 }
 
-.ContainerHome__button--btn:hover{
+.ContainerHome__button--btn:hover {
   background-color: #8b4613;
 }
 
-@media screen and (min-width:1200px) {
-
+@media screen and (min-width: 1440px) {
   @keyframes amasaLogo {
-    0% { left: 100px; top: 300px; }
-    50% { left: 200px; top: 190px; }
-    75% { left: 300px; top: 150px; }
-    100% { left: 370px; top: 10px; }
+    0% {
+      left: 100px;
+      top: 300px;
+    }
+    50% {
+      left: 200px;
+      top: 190px;
+    }
+    75% {
+      left: 300px;
+      top: 150px;
+    }
+    100% {
+      left: 370px;
+      top: 10px;
+    }
   }
 
-  .ContainerHome__image--img{
+  .ContainerHome__image--img {
     width: 471px;
     height: 465px;
     position: absolute;
-    animation: amasaLogo 3s ease-in-out ;
+    animation: amasaLogo 3s ease-in-out;
     animation-fill-mode: forwards;
-
   }
 
-  .ContainerHome__text{
+  .ContainerHome__text {
     font-size: 35px;
     position: relative;
   }
 
   @keyframes amasatext {
-    0%   {left:0px; top:300px;}
-    50%  {left:50px; top:100px;}
-    75%  {left:0px; top:200px;}
-    100% {left:15px; top:230px;}
+    0% {
+      left: 0px;
+      top: 300px;
+    }
+    50% {
+      left: 50px;
+      top: 100px;
+    }
+    75% {
+      left: 0px;
+      top: 200px;
+    }
+    100% {
+      left: 15px;
+      top: 230px;
+    }
   }
 
-  .ContainerHome__button{
+  .ContainerHome__button {
     position: absolute;
   }
 
-  .ContainerHome__button--btn{
+  .ContainerHome__button--btn {
     height: 55px;
     width: 234px;
     font-size: 20px;
   }
 
   @keyframes amasabutton {
-    0%   {left:0px; top:300px;}
-    50%  {left:0px; top:100px;}
-    75%  {left:400px; top:200px;}
-    100% {left:500px; top:550px;}
+    0% {
+      left: 0px;
+      top: 300px;
+    }
+    50% {
+      left: 0px;
+      top: 100px;
+    }
+    75% {
+      left: 400px;
+      top: 200px;
+    }
+    100% {
+      left: 500px;
+      top: 550px;
+    }
   }
 }
-@media(max-width:2000px){
+@media (min-width: 2000px) {
   @keyframes amasaLogo {
-    0% { left: 100px; top: 300px; }
-    50% { left: 200px; top: 190px; }
-    75% { left: 300px; top: 150px; }
-    100% { left: 504px; top: 10px; }
+    0% {
+      left: 100px;
+      top: 300px;
+    }
+    50% {
+      left: 200px;
+      top: 190px;
+    }
+    75% {
+      left: 300px;
+      top: 150px;
+    }
+    100% {
+      left: 504px;
+      top: 10px;
+    }
   }
 
   @keyframes amasatext {
-    0%   {left:0px; top:300px;}
-    50%  {left:50px; top:100px;}
-    75%  {left:0px; top:200px;}
-    100% {left:15px; top:230px;}
+    0% {
+      left: 0px;
+      top: 300px;
+    }
+    50% {
+      left: 50px;
+      top: 100px;
+    }
+    75% {
+      left: 0px;
+      top: 200px;
+    }
+    100% {
+      left: 15px;
+      top: 230px;
+    }
   }
 
   @keyframes amasabutton {
-    0%   {left:0px; top:300px;}
-    50%  {left:0px; top:100px;}
-    75%  {left:400px; top:200px;}
-    100% {left:616px; top:550px;}
+    0% {
+      left: 0px;
+      top: 300px;
+    }
+    50% {
+      left: 0px;
+      top: 100px;
+    }
+    75% {
+      left: 400px;
+      top: 200px;
+    }
+    100% {
+      left: 616px;
+      top: 550px;
+    }
   }
-
 }
